@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>唯票商家后台管理系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">  
+  <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+  <link rel="stylesheet" href="../static/css/vipiao.css"  media="all">
+  <!-- 让IE8/9支持媒体查询 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="layui-layout layui-layout-admin layui-layout-vipiao">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="../static/images/logo.png" alt=""></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="vipiao.html">首页</a></li>
+      <li class="layui-nav-item"><a href="">用户管理</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">系统管理</a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">个人信息</a></dd>
+          <dd><a href="">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">使用手册</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          唯票
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">基本资料</a></dd>
+          <dd><a href="">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">注销</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;"><img src="../static/images/programIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />节目管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="programs.html">发布票源</a></dd>
+            <dd><a href="ticketsAll.html">已发布票源</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;"><img src="../static/images/orderIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />订单管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="confirmOrders.html">待确认</a></dd>
+            <dd><a href="javascript:;" class="layui-this">待发货</a></dd>
+            <dd><a href="listOrders.html">订单列表</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />活动管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">微博转发抽奖</a></dd>
+            <dd><a href="javascript:;">预定列列表</a></dd>
+            <dd><a href="">已获得预定</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/money bag.png" style="width: 16px;height: 18px;margin-right: 6px" />钱包管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">提现申请</a></dd>
+          </dl>
+        </li>
+        <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <p class="personalInfo_nav">      
+      <span class="layui-breadcrumb">
+        <a href="vipiao.html">首页</a>
+        <a href="listOrders.html">订单管理</a>
+        <a><cite>订单管理列表</cite></a>
+      </span>
+    </p>
+    <!-- 内容主体区域 -->
+    <div style="padding: 10px; border: solid 1px #eee;margin: 20px;" class="programs_list">
+        <form class="layui-form listOrders_form" action="">
+          <div class="layui-form-item">
+            <label class="layui-form-label">订单编号：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入订单编号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">演出标题：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="title" placeholder="请输入演出标题" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">演出城市：</label>
+            <div class="layui-input-inline">
+              <input type="text" name="city" placeholder="请输入演出城市" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">演出时间：</label>
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="datePlugin" name="time">
+            </div>
+            <label class="layui-form-label">配送方式：</label>
+            <div class="layui-input-inline">
+              <select name="distrWay">
+                <option value="">请选择配送方式</option>
+                <option value="1">收货人电话</option>
+                <option value="2">取票人电话</option>
+              </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux">-</div>
+            <div class="layui-input-inline">
+              <input type="text" name="phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+            </div>
+            
+            <button class="layui-btn" lay-submit lay-filter="formDemo" style="margin-left: 20px;">搜索</button>
+          </div>
+        </form>
+        <table class="layui-table">
+          <thead>
+            <tr>
+              <th>订单号/时间</th>
+              <th>节目信息</th>
+              <th>城市/演出时间</th>
+              <th>票档/区域</th>
+              <th>连坐说明</th>
+              <th>销售价格</th>
+              <th>配票数</th>
+              <th>总金额</th>
+              <th>用户信息</th>
+              <th>配送方式</th>
+              <th>订单状态</th>
+              <th>操作</th>
+            </tr> 
+          </thead>
+          <tbody id="demo">
+            
+          </tbody>
+        </table>
+        <div id="test1" style="text-align: center;"></div>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 北京盈拓文化传媒有限公司 版权所有
+  </div>
+</div>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+
+<!-- 模板 -->
+<script type="text/html" id="demoT">
+  {{#  layui.each(d.list, function(index, item){ }}
+    <tr>
+      <td>{{item.modname}}<br/>2017-08-17 10:53:45</td>
+      <td>{{item.alias}}</td>
+      <td>呼和浩特市<br/>2017-08-26 10:47:22</td>
+      <td>票档价格：100.00元 <br/>位置区域：c-随机-座位随机</td>
+      <td></td>
+      <td>60元</td>
+      <td>1</td>
+      <td>60元</td>
+      <td>测试、18310246630、北京市-北京市-海淀区-唯票</td>
+      <td>快递：0.00元</td>
+      <td>待发货</td>
+      <td><a href="">发货</a></td>
+    </tr>
+  {{#  }); }}
+  {{#  if(d.list.length === 0){ }}
+    <tr>
+      <td colspan="12">暂无数据......</td>
+    </tr>
+  {{#  } }}
+</script>
+
+<script>
+//JavaScript代码区域
+layui.use(['element', 'laypage', 'laydate', 'form', 'laytpl'], function(){
+  var element = layui.element; 
+  var laypage = layui.laypage;
+  var laydate = layui.laydate;
+  var form = layui.form;
+  var laytpl = layui.laytpl;
+
+  laydate.render({ 
+    elem: '#datePlugin'
+    ,range: true //或 range: '~' 来自定义分割字符
+  });
+
+  form.on('submit(formDemo)', function(data){
+    layer.msg(data.field);
+    return false;
+  });
+
+  laypage.render({
+    elem: 'test1', //注意，这里的 test1 是 ID，不用加 # 号
+    count: 50, //数据总数，从服务端得到
+    limit: 5,
+    groups: 5, //连续显示分页数  
+    skip: true, //是否开启跳页 
+    curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+        var page = location.search.match(/page=(\d+)/);
+        return page ? page[1] : 1;
+    }(), //当前页 
+    first: '首页', //若不显示，设置false即可  
+    last: '尾页', //若不显示，设置false即可  
+    prev: '<上一页', //若不显示，设置false即可  
+    next: '下一页>',
+    jump: function(e, first){
+        if (!first) {
+            if(location.href.indexOf("?page")>0){
+                location.href = location.href.split("?page")[0]+'?page='+e.curr;
+            }else if(location.href.indexOf("?")>0){
+                location.href = location.href.split("&page")[0]+'&page='+e.curr;
+            }else{
+                location.href = location.href+'?page='+e.curr;
+            }
+        }
+    }
+  });
+
+  var data = { //数据
+    "title":"Layui常用模块"
+    ,"list":[{"modname":"15029384255085465","alias":"测试节目0815","site":"layer.layui.com"},{"modname":"15027821376677502","alias":"北京测试预定"}]
+  }
+  var getTpl = demoT.innerHTML
+  ,view = document.getElementById('demo');
+  laytpl(getTpl).render(data, function(html){
+    view.innerHTML = html;
+  });
+});
+</script>
+</body>
+</html>
