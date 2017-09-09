@@ -1,0 +1,46 @@
+{
+	"status_code": 200,
+	"message": "success",
+	"data": [
+		{
+		"id": "1",
+		"title": "演唱会",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061200.png"
+		},
+		{
+		"id": "2",
+		"title": "体育赛事",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061207.png"
+		},
+		{
+		"id": "6",
+		"title": "戏曲综艺",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061214.png"
+		},
+		{
+		"id": "7",
+		"title": "音乐会",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061222.png"
+		},
+		{
+		"id": "3",
+		"title": "话剧歌剧",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061229.png"
+		},
+		{
+		"id": "8",
+		"title": "芭蕾舞蹈",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061238.png"
+		},
+		{
+		"id": "4",
+		"title": "儿童亲子",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061245.png"
+		},
+		{
+		"id": "9",
+		"title": "休闲展览",
+		"pic": "http://static.vintop.cn/image/program/ticket/sorts//2017/08/20170815061253.png"
+		}
+	]
+}

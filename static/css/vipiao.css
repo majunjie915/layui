@@ -13,12 +13,16 @@
 .blank30{clear: both;height: 30px;overflow: hidden;display: block;}
 
 /*首页*/
+.index_container{padding: 20px;}
+.index_left{float: left; width: 65%;}
+.index_right{float: right; width: 33%}
 /*首页上半部分*/
 .index_top{
 	width: 100%;
 	height: 173px;
 	border: solid 1px #ddd;
 	box-sizing: border-box;
+	border-radius: 5px;
 }
 .index_top>div{padding: 20px; height: 80px;	}
 .index_top>div>ul{float: left; margin-top: 10px;}
@@ -32,25 +36,25 @@
 .index_top_official{width: 20px;}
 .index_top_btn{float: right; margin-top: 20px;}
 
-.index_top>p{padding: 14.5px 20px; background: #f5f5f5;}
+.index_top>p{padding: 16px 20px; background: #f5f5f5;}
 .index_top_balance{color: #f00;}
-.index_top_changeInfo{margin-left: 65px;}
+.index_top_changeInfo{float: right;}
 .index_top_changeInfo a{color: #29749b!important;}
 /*首页下半部分*/
-.index_bottom{border: solid 1px #ddd;}
+.index_bottom, .index_middle, .index_notice, .salesInfo{border: solid 1px #ddd; border-radius: 5px;}
 .index_bottom_title{
 	font-size: 18px;
 	border-left: solid 4px #f00;
 	padding-left: 30px;
 	margin-top: 20px;
 }
-.index_bottom_content{
+.index_bottom_content, .index_middle_content{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: space-between;
 }
-.index_bottom_content li{
+.index_bottom_content>li, .index_middle_content>li{
 	height: 155px;
 	color: #fff;
 	font-size: 10px;
@@ -66,20 +70,33 @@
 	margin-top: 30px;
 }
 .index_bottom_content li:nth-of-type(3){background: #bcb6d0;}
-.index_bottom_content li:nth-of-type(4){background: #f59175;}
-.index_bottom_content li:nth-of-type(5){
+.index_middle_content li:nth-of-type(1){background: #f59175;}
+.index_middle_content li:nth-of-type(2){
 	background: #e5728d;
 	margin: 0 3%;
 	margin-top: 30px;
 }
-.index_bottom_content li:nth-of-type(6){background: #bdbdbd;}
+.index_middle_content li:nth-of-type(3){background: #bdbdbd;}
 .index_bottom_content li p{margin: 20px;}
 .index_bottom_content li h3{
 	font-size: 35px;
 	text-align: center;
 	margin-top: 30px;
 }
+.index_middle_content li p{text-align: center; line-height: 155px;}
 
+.index_notice{padding: 15px;}
+.index_notice h3{font-size: 17px; font-weight: 700; height: 30px;border-bottom: solid 1px #aaa;}
+.index_notice h3 span{float: right; font-weight: 400; font-size: 14px;}
+.index_notice ul{margin-top: 10px;}
+.index_notice ul li{line-height: 25px;}
+.index_notice ul li span{float: right;}
+
+.salesInfo{padding: 15px;}
+.salesInfo ul{height: 60px;}
+.salesInfo li{float: left; border-right: solid 1px #999; text-align: center; width: 40%;}
+.salesInfo li:last-of-type{border-right: none;}
+.salesInfo li h3{font-size: 16px; font-weight: 600;margin-top: 10px;}
 /*个人信息*/
 .layui-body .personalInfo_nav{
 	background: #eee;

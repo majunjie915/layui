@@ -1,0 +1,35 @@
+/*footer*/
+.footer{position: fixed; z-index: 1999; bottom:0px; left: 0px; right: 0px; margin: auto;padding:0;height:49px;}
+.footer_bd{width:100%; height:55px;background:rgba(255,255,255, 0.96);text-align:center;}
+.footer_bd li{float:left;width:25%;text-align:center;font-size: 12px;color: #999;}
+.footer_bd li a {display: block;width: 100%;text-align: center; padding-top:5px;  color:#999; font-size:12px;}
+.footer_bd li a b.f_icon1{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/homeIcon1.png);background-size:25px;}
+.footer_bd li a b.f_icon2{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/programIcon1.png);background-size:25px;}
+.footer_bd li a b.f_icon3{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/activityIcon1.png);background-size:25px;}
+.footer_bd li a b.f_icon4{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/mineIcon1.png);background-size:25px;}
+/*.footer_bd li a b.f_icon5{display:block;width:35px;height:35px;text-align:center;margin:0 auto;background:url(/static/images/footer_icon2.png) 0 -308px no-repeat;background-size:35px;}*/
+.footer_bd li.f_cur{color: #000};
+.f_cur a:link{color:#fce329;}.f_cur a:visited{color:#fce329;}.f_cur a:hover{color:#fce329;}.f_cur a:active{color:#fce329;}
+.footer_bd li.f_cur a b.f_icon1{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/homeIcon2.png);background-size:25px;}
+.footer_bd li.f_cur a b.f_icon2{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/programIcon2.png);background-size:25px;}
+.footer_bd li.f_cur a b.f_icon3{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/activityIcon2.png);background-size:25px;}
+.footer_bd li.f_cur a b.f_icon4{display:block;width:25px;height:25px;text-align:center;margin:0 auto;background:url(/static/images/footerIcon/mineIcon2.png);background-size:25px;}
+/*.footer_bd li.f_cur a b.f_icon5{display:block;width:35px;height:35px;text-align:center;margin:0 auto;background:url(/static/images/footer_icon2.png) 0 -346px no-repeat;background-size:35px;}*/
+.footer_bd li a b{padding-bottom:0px;}
+
+.footerLI{list-style:none;
+text-align:left;
+right:33px;
+top:30px;
+width:300px;
+height:22px;
+font-size:22px;
+}
+
+@media screen and (max-width:375px) {
+	.footer_bd li{
+	    font-size : 12px;
+	    -webkit-transform : scale(0.84,0.84) ;
+	    *font-size:10px;
+	 }
+}
