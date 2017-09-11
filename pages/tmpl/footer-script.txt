@@ -1,0 +1,20 @@
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script src="../static/js/global.js" charset="utf-8"></script>
+<script>
+layui.use(['element', 'ajax', 'configAPI', 'customUtil', 'jquery'], function(){
+	var element = layui.element;  
+	var ajax = layui.ajax;
+	var API = layui.configAPI;
+	var customUtil = layui.customUtil;
+	var $ = layui.jquery;
+	var alldds = $(".nav_left li dd");
+	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";
+	
+	for(var i = 0; i < alldds.length; i++){
+		$(alldds[i]).removeClass("layui-this");
+		if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
+			$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+		}
+	} 
+});
+</script>

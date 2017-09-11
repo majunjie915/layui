@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+	RewriteCond %{HTTP_HOST} majunjie-vendor.com
+	RewriteCond %{REQUEST_URI} !^/dist
+	RewriteRule ^(.*).html$ /dist/$1.html [L]
+
+
+	RewriteCond %{HTTP_HOST} majunjie-vendor.com
+	RewriteRule ^\/?$ /dist/vipiao.html [L]
+
+	
+</IfModule>

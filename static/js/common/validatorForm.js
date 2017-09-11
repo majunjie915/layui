@@ -1,7 +1,7 @@
 define(function(require,exports){
 	var $ = require("jquery");
 	var layer = require('mod/common/layer');
-	var FormValidator = require("mod/common/validate");
+	var FormValidator = require("common/validate");
 
 	var validatorForm = function (formName,fileds,callback) {
 		

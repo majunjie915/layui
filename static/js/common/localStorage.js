@@ -1,4 +1,4 @@
- define(function(){
+layui.define([],function(exports){
  	var LS  = window.localStorage;
 	var LSOBJ =  {
 		set : function(key, value){
@@ -39,6 +39,6 @@
 		length : LS.length
 	};
 	
-	return LSOBJ;
+	exports("localStorage" , LSOBJ);
  })
     

@@ -1,0 +1,7 @@
+﻿  <div class="layui-footer" style="left:16%;">
+    <!-- 底部固定区域 -->
+    © 北京盈拓文化传媒有限公司 版权所有
+  </div>
+</div>
+</body>
+</html>
