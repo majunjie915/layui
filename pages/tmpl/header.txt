@@ -55,14 +55,14 @@
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <ul class="layui-nav layui-nav-tree nav_left"  lay-filter="test"  style="width:100%;">
         <li class="layui-nav-item">
-          <a class="" href="javascript:;"><img src="../static/images/programIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
+          <a class="" href="javascript:;"><img src="../static/images/merchant.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
           <dl class="layui-nav-child">
             <dd class="vipiao"><a href="vipiao.html">店铺概览</a></dd>
             <dd class="myWallet"><a href="myWallet.html">我的钱包</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><img src="../static/images/orderIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
+          <a href="javascript:;"><img src="../static/images/project.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
           <dl class="layui-nav-child">
             <dd class="programs"><a href="programs.html">发布票源</a></dd>
             <dd class="ticketsAll"><a href="ticketsAll.html">票品管理</a></dd>
@@ -76,7 +76,7 @@
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><img src="../static/images/money bag.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
+          <a href="javascript:;"><img src="../static/images/systemManage.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
           <dl class="layui-nav-child">
             <dd class="personalInfo"><a href="personalInfo.html">账户信息</a></dd>
             <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>

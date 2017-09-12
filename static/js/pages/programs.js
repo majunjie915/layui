@@ -1,6 +1,43 @@
-layui.use(['element', 'laypage'], function(){
+layui.use(['element', 'laypage', 'laytpl', 'jquery'], function(){
   var element = layui.element; 
   var laypage = layui.laypage;
+  var laytpl = layui.laytpl;
+  var $ = layui.jquery;
+
+  var data = {
+    "total": "4",
+    "list": [
+        {
+            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+            "show_time": "2017.08.25 - 2017.12.20",
+            "all_scence": "上海/天津/北京",
+            "img": "http://img4.imgtn.bdimg.com/it/u=1235202486,955959316&fm=200&gp=0.jpg"
+        },
+        {
+            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+            "show_time": "2017.08.25 - 2017.12.20",
+            "all_scence": "上海/天津/北京",
+            "img": "http://img0.imgtn.bdimg.com/it/u=1974427947,3931742233&fm=27&gp=0.jpg"
+        },
+        {
+            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+            "show_time": "2017.08.25 - 2017.12.20",
+            "all_scence": "上海/天津/北京",
+            "img": "http://img5.imgtn.bdimg.com/it/u=622933360,3059006293&fm=27&gp=0.jpg"
+        },
+        {
+            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+            "show_time": "2017.08.25 - 2017.12.20",
+            "all_scence": "上海/天津/北京",
+            "img": "http://img0.imgtn.bdimg.com/it/u=967033261,2403729305&fm=200&gp=0.jpg"
+        }
+    ]
+  };
+  var tpl = programsT.innerHTML;
+  var view = document.getElementById("programs");
+  laytpl(tpl).render(data, function(html){
+    view.innerHTML = html;
+  });
 
   laypage.render({
     elem: 'test1', //注意，这里的 test1 是 ID，不用加 # 号

@@ -55,14 +55,14 @@
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <ul class="layui-nav layui-nav-tree nav_left"  lay-filter="test"  style="width:100%;">
         <li class="layui-nav-item">
-          <a class="" href="javascript:;"><img src="../static/images/programIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
+          <a class="" href="javascript:;"><img src="../static/images/merchant.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
           <dl class="layui-nav-child">
             <dd class="vipiao"><a href="vipiao.html">店铺概览</a></dd>
             <dd class="myWallet"><a href="myWallet.html">我的钱包</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><img src="../static/images/orderIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
+          <a href="javascript:;"><img src="../static/images/project.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
           <dl class="layui-nav-child">
             <dd class="programs"><a href="programs.html">发布票源</a></dd>
             <dd class="ticketsAll"><a href="ticketsAll.html">票品管理</a></dd>
@@ -76,7 +76,7 @@
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;"><img src="../static/images/money bag.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
+          <a href="javascript:;"><img src="../static/images/systemManage.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
           <dl class="layui-nav-child">
             <dd class="personalInfo"><a href="personalInfo.html">账户信息</a></dd>
             <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>
@@ -87,74 +87,121 @@
     </div>
   </div>
   <div class="layui-body" style="left: 16%;">
-    <p class="personalInfo_nav">      
+    <!-- <p class="personalInfo_nav">      
       <span class="layui-breadcrumb">
         <a href="vipiao.html">首页</a>
         <a href="programs.html">活动管理</a>
         <a><cite>节目场次票源列表</cite></a>
       </span>
-    </p>
+    </p> -->
+    <ul class="custom_nav">
+      <li data-action="changeStatus" data-status="0">在售中</li>
+      <li data-action="changeStatus" data-status="1">审核中</li>
+      <li data-action="changeStatus" data-status="2">已停售</li>
+      <a href="programs.html"><button class="postTicBtn layui-btn">发布票源</button></a>
+    </ul>
     <!-- 内容主体区域 -->
-    <div style="padding: 10px; border: solid 1px #eee;margin: 20px;" class="programs_list">
-        <form class="layui-form" action="" style="margin: 50px 0;">
-          <div class="layui-form-item" style="padding-left: 150px;">
+    <div style="margin: 20px;" class="programs_list">
+        <form class="layui-form" action="" style="margin: 50px 0;display: none;" data-status="0">
+          <div class="layui-form-item">
             <div class="layui-input-inline">
               <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">演出时间：</label>  
-            <div class="layui-input-inline" style="margin-right: 20px;">
-              <input type="text" class="layui-input" id="datePlugin">
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="datePluginStart" placeholder="开始时间">
             </div>
-            <button class="layui-btn">搜索</button>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;padding-left: 0;padding-right: 0;text-align: left;">~</label>  
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="datePluginEnd" placeholder="结束时间">
+            </div>
+            <div class="layui-input-inline">
+              <select name="distrWay">
+                <option value="">票品状态</option>
+                <option value="1">在售中</option>
+                <option value="2">已下架</option>
+              </select>
+            </div>
+            <button class="layui-btn">筛选</button>
+          </div>
+        </form>
+        <form class="layui-form" action="" style="margin: 50px 0;display: none;" data-status="1">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+              <select name="distrWay">
+                <option value="">审核状态</option>
+                <option value="1">审核中</option>
+                <option value="2">审核未通过</option>
+              </select>
+            </div>
+            <button class="layui-btn">筛选</button>
+          </div>
+        </form>
+        <form class="layui-form" action="" style="margin: 50px 0;display: none;" data-status="2">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">演出时间：</label>  
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="datePluginStart" placeholder="开始时间">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;padding-left: 0;padding-right: 0;text-align: left;">~</label>  
+            <div class="layui-input-inline" style="margin-right: 20px;">
+              <input type="text" class="layui-input" id="datePluginEnd" placeholder="结束时间">
+            </div>
+            <button class="layui-btn">筛选</button>
           </div>
         </form>
         <table class="layui-table">
           <thead>
             <tr>
-              <th>上传时间</th>
-              <th>节目名称</th>
-              <th>城市</th>
-              <th>演出时间</th>
+              <th>演出信息</th>
               <th>票档</th>
-              <th>销售价格</th>
+              <th>上票价</th>
               <th>剩余库存</th>
-              <th>已出售数量</th>
-              <th>区域-座位描述</th>
-              <th>配送方式</th>
-              <th>限购</th>
+              <th>已出售</th>
+              <th>区域描述</th>
               <th>票品状态</th>
               <th>操作</th>
             </tr> 
           </thead>
           <tbody>
             <tr>
-              <td>2017-08-15 11:18:17</td>
-              <td>测试节目0815</td>
-              <td>北京市</td>
-              <td>2017-07-13 11:18:52</td>
-              <td>500</td>
-              <td>1</td>
-              <td>100</td>
-              <td>0</td>
-              <td>一区</td>
-              <td>快递：0.00元</td>
-              <td>0</td>
-              <td>待审核</td>
+              <td>
+                <img src="http://img1.imgtn.bdimg.com/it/u=1794894692,1423685501&fm=27&gp=0.jpg" style="float: left; margin-right: 10px;">
+                <div>
+                  <p>“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会</p>
+                  <p>2017.07.28 周五 19:30</p>
+                  <p>北京 鸟巢体育馆</p>
+                </div>
+              </td>
+              <td>680</td>
+              <td>900</td>
+              <td>10张</td>
+              <td>3张</td>
+              <td>好位置</td>
+              <td>已停售</td>
               <td><a href="">修改</a><a href="">删除</a></td>
             </tr>
             <tr>
-              <td>2017-07-21 19:27:02</td>
-              <td>北京演唱会测试CC</td>
-              <td>武汉市</td>
-              <td>2017-09-02 09:48:32</td>
-              <td>300</td>
-              <td>199</td>
-              <td>10</td>
-              <td>0</td>
-              <td>C区-0</td>
-              <td>快递：0.00元</td>
-              <td>0</td>
-              <td>待审核</td>
+              <td>
+                <img src="../static/images/u=2397973346,3439973448&fm=200&gp=0.jpg" style="float: left;margin-right: 10px;">
+                <div>
+                  <p>“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会</p>
+                  <p>2017.07.28 周五 19:30</p>
+                  <p>北京 鸟巢体育馆</p>
+                </div>
+              </td>
+              <td>680</td>
+              <td>900</td>
+              <td>10张</td>
+              <td>3张</td>
+              <td>好位置</td>
+              <td>已停售</td>
               <td><a href="">修改</a><a href="">删除</a></td>
             </tr>
           </tbody>
@@ -181,12 +228,16 @@ layui.use(['element', 'ajax', 'configAPI', 'customUtil', 'jquery'], function(){
 	var alldds = $(".nav_left li dd");
 	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";
 	
-	for(var i = 0; i < alldds.length; i++){
-		$(alldds[i]).removeClass("layui-this");
-		if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
-			$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+	if(cur_nav_left_dd==" layui-this"){
+		$(alldds[0]).addClass("layui-this").closest("li").addClass("layui-nav-itemed");
+	}else{
+		for(var i = 0; i < alldds.length; i++){
+			$(alldds[i]).removeClass("layui-this");
+			if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
+				$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+			}
 		}
-	} 
+	}
 });
 </script>
 

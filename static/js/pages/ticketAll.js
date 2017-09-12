@@ -1,11 +1,16 @@
-layui.use(['element', 'laypage', 'laydate'], function(){
+layui.use(['element', 'laypage', 'laydate', 'jquery', 'customEvent', 'localStorage', 'form'], function(){
   var element = layui.element; 
   var laypage = layui.laypage;
   var laydate = layui.laydate;
-
+  var $ = layui.jquery;
+  var E = layui.customEvent;
+  var LS = layui.localStorage;
+  var form = layui.form;
   laydate.render({ 
-    elem: '#datePlugin'
-    ,range: true //或 range: '~' 来自定义分割字符
+    elem: '#datePluginStart'
+  });
+  laydate.render({ 
+    elem: '#datePluginEnd'
   });
 
   laypage.render({
@@ -34,4 +39,42 @@ layui.use(['element', 'laypage', 'laydate'], function(){
         }
     }
   });
+
+  function bindEvent(){
+    var eventsObj = {
+      changeStatus: function(){
+        var forms = $(".layui-form");
+        $(".custom_nav li").removeClass("show");
+        $(this).addClass("show");
+        for (var i = 0; i < forms.length; i++) {
+          $(forms[i]).hide();
+          if($(forms[i]).data("status")==$(this).data("status")){
+            $(forms[i]).show();
+          }
+        }
+        LS.set("ticketStatus", $(this).data("status"));
+      }
+    };
+    E("body", eventsObj);
+  }
+
+  function init(){
+    if (!LS.get("ticketStatus")) {
+      LS.set("ticketStatus", "0");
+    }
+    var customNavLi = $(".custom_nav li");
+    var forms = $(".layui-form");
+    for (var i = 0; i < customNavLi.length; i++) {
+      $(customNavLi[i]).removeClass("show");
+      $(forms[i]).hide();
+      if($(customNavLi[i]).data("status")==LS.get("ticketStatus")){
+        $(customNavLi[i]).addClass("show");
+      }
+      if ($(forms[i]).data("status")==LS.get("ticketStatus")) {
+        $(forms[i]).show();
+      }
+    }
+    bindEvent();
+  }
+  init();
 });

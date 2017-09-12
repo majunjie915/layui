@@ -1,19 +1,25 @@
 @@include("./tmpl/header.txt")
   <div class="layui-body" style="left: 16%;">
-    <p class="personalInfo_nav">      
+    <!-- <p class="personalInfo_nav">      
       <span class="layui-breadcrumb">
         <a href="vipiao.html">首页</a>
         <a href="listOrders.html">订单管理</a>
         <a><cite>订单管理列表</cite></a>
       </span>
-    </p>
+    </p> -->
+    <ul class="custom_nav">
+      <li data-action="changeStatus" data-status="0">全部</li>
+      <li data-action="changeStatus" data-status="1">待确认</li>
+      <li data-action="changeStatus" data-status="2">待发货</li>
+      <li data-action="changeStatus" data-status="3">交易完成</li>
+      <li data-action="changeStatus" data-status="4">交易关闭</li>
+    </ul>
     <!-- 内容主体区域 -->
     <div style="padding: 10px; border: solid 1px #eee;margin: 20px;" class="programs_list">
         <form class="layui-form listOrders_form" action="">
           <div class="layui-form-item">
-            <label class="layui-form-label">订单编号：</label>
             <div class="layui-input-inline">
-              <input type="text" name="orderNum" placeholder="请输入订单编号" autocomplete="off" class="layui-input">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">演出标题：</label>
             <div class="layui-input-inline">
@@ -74,42 +80,36 @@
               <th>操作</th>
             </tr> 
           </thead>
-          <tbody>
-            <tr>
-              <td>15029384255085465<br/>2017-08-17 10:53:45</td>
-              <td>测试节目0815</td>
-              <td>呼和浩特市<br/>2017-08-26 10:47:22</td>
-              <td>票档价格：100.00元 <br/>位置区域：c-随机-座位随机</td>
-              <td></td>
-              <td>60元</td>
-              <td>1</td>
-              <td>60元</td>
-              <td>测试、18310246630、北京市-北京市-海淀区-唯票</td>
-              <td>快递：0.00元</td>
-              <td></td>
-              <td>待发货</td>
-              <td><a href="">发货</a></td>
-            </tr>
-            <tr>
-              <td>15027821376677502<br/>2017-08-15 15:28:57</td>
-              <td>北京测试预定</td>
-              <td>北京市<br/>2017-08-17 16:46:31</td>
-              <td>票档价格：200.00元 <br/>位置区域：C区--测试，官方</td>
-              <td></td>
-              <td>20元</td>
-              <td>1</td>
-              <td>20元</td>
-              <td>测试、18310246630、北京市-北京市-海淀区-唯票</td>
-              <td>快递：0.00元</td>
-              <td>快递公司：宅急送 物流单号：4525</td>
-              <td>已完成</td>
-              <td><a href=""></a></td>
-            </tr>
+          <tbody id="orderList">
+            
           </tbody>
         </table>
         <div id="test1" style="text-align: center;"></div>
     </div>
   </div>
+
+  <script type="text/html" id="orderListT">
+    {{# layui.each(d.list, function(index, item){ }}
+      <tr>
+        <td>{{item.id}}<br/>{{item.create_time}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.cities}}<br/>{{item.show_time}}</td>
+        <td>票档价格：{{item.ticket_price}}元 <br/>位置区域：c-随机-座位随机</td>
+        <td></td>
+        <td>60元</td>
+        <td>1</td>
+        <td>60元</td>
+        <td>测试、18310246630、北京市-北京市-海淀区-唯票</td>
+        <td>快递：0.00元</td>
+        <td></td>
+        <td>待发货</td>
+        <td><a href="">发货</a></td>
+      </tr>
+    {{# }); }}
+    {{# if(d.list.length === 0){ }}
+      <tr><td colspan="12">暂无数据......</td></tr>
+    {{# } }}
+  </script>
 @@include("./tmpl/footer-script.txt")
 @@include("./tmpl/footer.txt")
 <script type="text/javascript" src="../static/js/pages/listOrders.js"></script>

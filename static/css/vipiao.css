@@ -12,6 +12,12 @@
 }
 .blank30{clear: both;height: 30px;overflow: hidden;display: block;}
 
+.custom_nav{height: 60px; line-height: 60px;margin: 0 20px;border-bottom: solid 2px #ccc;}
+.custom_nav li{float: left;width: 70px;cursor: pointer;text-align: center;}
+.custom_nav li:hover{color: #666;}
+.show{border-bottom: solid 2px green;}
+.postTicBtn{float: right;margin-top: 10px;}
+
 /*首页*/
 .index_container{padding: 20px;}
 .index_left{float: left; width: 65%;}

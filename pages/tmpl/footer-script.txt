@@ -10,11 +10,15 @@ layui.use(['element', 'ajax', 'configAPI', 'customUtil', 'jquery'], function(){
 	var alldds = $(".nav_left li dd");
 	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";
 	
-	for(var i = 0; i < alldds.length; i++){
-		$(alldds[i]).removeClass("layui-this");
-		if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
-			$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+	if(cur_nav_left_dd==" layui-this"){
+		$(alldds[0]).addClass("layui-this").closest("li").addClass("layui-nav-itemed");
+	}else{
+		for(var i = 0; i < alldds.length; i++){
+			$(alldds[i]).removeClass("layui-this");
+			if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
+				$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+			}
 		}
-	} 
+	}
 });
 </script>
