@@ -112,7 +112,12 @@
 	margin: 20px;
 }
 .personalInfo_form .layui-form-label{ width: 100px; }
+.personalInfo_tip{color: red;}
 
 /*订单列表*/
-.listOrders_form .layui-form-item .layui-input-inline{margin-bottom: 20px;}
+.listOrders_form{display: none;}
+.listOrders_form .layui-form-item .layui-input-inline{width: 180px;}
 .listOrders_form .layui-form-item button{margin-left: 30px;}
+.listOrders_form .layui-form-item label.layui-form-label{padding-left: 0;padding-right: 0;}
+.listOrders_form .layui-form-item div.reduceInput{width: 100px;}
+#orderList button.layui-btn{margin: 5px 0;}

@@ -29,7 +29,7 @@
       <li class="layui-nav-item">
         <a href="javascript:;">系统管理</a>
         <dl class="layui-nav-child">
-          <dd><a href="personalInfo.html">个人信息</a></dd>
+          <dd><a href="personalInfo.html">账户信息</a></dd>
           <dd><a href="">修改密码</a></dd>
         </dl>
       </li>
@@ -42,7 +42,7 @@
           唯票
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="personalInfo.html">基本资料</a></dd>
+          <dd><a href="personalInfo.html">账户信息</a></dd>
           <dd><a href="">修改密码</a></dd>
         </dl>
       </li>
@@ -96,7 +96,7 @@
     </p>
     <!-- 内容主体区域 -->
     <div style="padding: 10px; border: solid 1px #eee;margin: 20px;" class="programs_list">
-        <form class="layui-form" action="" style="margin: 50px 0;">
+        <form class="layui-form" action="" style="margin: 20px 0;">
           <div class="layui-form-item">
             <div class="layui-input-block" style="text-align: center;">
               <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input" style="width: 50%; margin-right: 20px;display: inline;margin-left: 0;">
@@ -166,7 +166,8 @@ layui.use(['element', 'ajax', 'configAPI', 'customUtil', 'jquery'], function(){
 				$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
 			}
 		}
-	} 
+	}
+		 
 });
 </script>
 

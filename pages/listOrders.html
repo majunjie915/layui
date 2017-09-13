@@ -15,41 +15,34 @@
       <li data-action="changeStatus" data-status="4">交易关闭</li>
     </ul>
     <!-- 内容主体区域 -->
-    <div style="padding: 10px; border: solid 1px #eee;margin: 20px;" class="programs_list">
-        <form class="layui-form listOrders_form" action="">
+    <div style="margin: 20px;" class="programs_list" class="listOrdersContent">
+        <form class="layui-form listOrders_form" action="" data-status="0">
           <div class="layui-form-item">
             <div class="layui-input-inline">
               <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
             </div>
-            <label class="layui-form-label">演出标题：</label>
-            <div class="layui-input-inline">
-              <input type="text" name="title" placeholder="请输入演出标题" autocomplete="off" class="layui-input">
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间">
             </div>
-            <label class="layui-form-label">演出城市：</label>
-            <div class="layui-input-inline">
-              <input type="text" name="city" placeholder="请输入演出城市" autocomplete="off" class="layui-input">
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间">
             </div>
-            <label class="layui-form-label">演出时间：</label>
-            <div class="layui-input-inline">
-              <input type="text" class="layui-input" id="datePlugin" name="time">
+            <div class="layui-form-mid layui-word-aux">-</div>
+            <div class="layui-input-inline" style="width: 140px;">
+              <input type="text" name="phone" placeholder="请输入用户手机号" autocomplete="off" class="layui-input">
             </div>
-            <label class="layui-form-label">配送方式：</label>
-            <div class="layui-input-inline">
+            <div class="layui-input-inline reduceInput">
               <select name="distrWay">
-                <option value="">请选择配送方式</option>
+                <option value="">配送方式</option>
                 <option value="1">收货人电话</option>
                 <option value="2">取票人电话</option>
               </select>
             </div>
-            <div class="layui-form-mid layui-word-aux">-</div>
-            <div class="layui-input-inline">
-              <input type="text" name="phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
-            </div>
-            <div style="clear: both;"></div>
-            <label class="layui-form-label">订单状态：</label>
-            <div class="layui-input-inline">
+            <div class="layui-input-inline reduceInput">
               <select name="status">
-                <option value="">按订单状态选择</option>
+                <option value="">订单状态</option>
                 <option value="1">未付款</option>
                 <option value="2">已付款</option>
                 <option value="3">待确认</option>
@@ -57,7 +50,100 @@
               </select>
             </div>
             
+            <div class="layui-input-inline" style="width: 64px;">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+          </div>
+        </form>
+        <form class="layui-form listOrders_form" action="" data-status="1">
+          <div class="layui-form-item">
             <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间">
+            </div>
+            <div class="layui-input-inline" style="width: 64px;">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+          </div>
+        </form>
+        <form class="layui-form listOrders_form" action="" data-status="2">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart3" placeholder="开始时间">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd3" placeholder="结束时间">
+            </div>
+            <div class="layui-input-inline" style="width: 64px;">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+          </div>
+        </form>
+        <form class="layui-form listOrders_form" action="" data-status="3">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart4" placeholder="开始时间">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd4" placeholder="结束时间">
+            </div>
+            <div class="layui-form-mid layui-word-aux">-</div>
+            <div class="layui-input-inline" style="width: 140px;">
+              <input type="text" name="phone" placeholder="请输入用户手机号" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline reduceInput">
+              <select name="distrWay">
+                <option value="">配送方式</option>
+                <option value="1">收货人电话</option>
+                <option value="2">取票人电话</option>
+              </select>
+            </div>
+            <div class="layui-input-inline" style="width: 64px;">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+          </div>
+        </form>
+        <form class="layui-form listOrders_form" action="" data-status="4">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline" style="width: 140px;">
+              <input type="text" name="phone" placeholder="请输入用户手机号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart5" placeholder="开始时间">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd5" placeholder="结束时间">
+            </div>
+            <div class="layui-input-inline reduceInput">
+              <select name="distrWay">
+                <option value="">配送方式</option>
+                <option value="1">收货人电话</option>
+                <option value="2">取票人电话</option>
+              </select>
+            </div>
+            <div class="layui-input-inline" style="width: 64px;">
               <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
             </div>
           </div>
@@ -103,7 +189,7 @@
         <td>快递：0.00元</td>
         <td></td>
         <td>待发货</td>
-        <td><a href="">发货</a></td>
+        <td><a href=""><button class="layui-btn layui-btn-mini layui-btn-primary">发货</button></a></td>
       </tr>
     {{# }); }}
     {{# if(d.list.length === 0){ }}
