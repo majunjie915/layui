@@ -110,11 +110,11 @@
             </div>
             <label class="layui-form-label">订单时间：</label>
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-form-mid layui-word-aux">-</div>
             <div class="layui-input-inline" style="width: 140px;">
@@ -149,11 +149,11 @@
             </div>
             <label class="layui-form-label">订单时间：</label>
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-input-inline" style="width: 64px;">
               <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
@@ -167,11 +167,11 @@
             </div>
             <label class="layui-form-label">订单时间：</label>
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginStart3" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart3" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginEnd3" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd3" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-input-inline" style="width: 64px;">
               <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
@@ -185,11 +185,11 @@
             </div>
             <label class="layui-form-label">订单时间：</label>
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginStart4" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart4" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginEnd4" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd4" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-form-mid layui-word-aux">-</div>
             <div class="layui-input-inline" style="width: 140px;">
@@ -217,11 +217,11 @@
             </div>
             <label class="layui-form-label">订单时间：</label>
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginStart5" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart5" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
             <div class="layui-input-inline reduceInput">
-              <input type="text" class="layui-input" id="datePluginEnd5" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd5" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-input-inline reduceInput">
               <select name="distrWay">
@@ -286,11 +286,8 @@
 <script src="../lib/layui/layui.js" charset="utf-8"></script>
 <script src="../static/js/global.js" charset="utf-8"></script>
 <script>
-layui.use(['element', 'ajax', 'configAPI', 'customUtil', 'jquery'], function(){
-	var element = layui.element;  
-	var ajax = layui.ajax;
-	var API = layui.configAPI;
-	var customUtil = layui.customUtil;
+layui.use(['element', 'jquery'], function(){
+	var element = layui.element;
 	var $ = layui.jquery;
 	var alldds = $(".nav_left li dd");
 	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";

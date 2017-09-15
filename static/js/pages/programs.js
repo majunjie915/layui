@@ -1,8 +1,20 @@
-layui.use(['element', 'laypage', 'laytpl', 'jquery'], function(){
-  var element = layui.element; 
-  var laypage = layui.laypage;
-  var laytpl = layui.laytpl;
-  var $ = layui.jquery;
+layui.use(['element', 'laypage', 'laytpl', 'jquery', 'form', 'layer', 'laydate', 
+    'ajax', 'configAPI', 'customEvent', 'customUtil', 'customDate', 'localStorage'], function(){
+  var element = layui.element,
+      laypage = layui.laypage,
+      laytpl = layui.laytpl,
+      $ = layui.jquery,
+      form = layui.form,
+      layer = layui.layer,
+      laydate = layui.laydate,
+      ajax = layui.ajax,
+      API = layui.configAPI,
+      E = layui.customEvent,
+      customUtil = layui.customUtil,
+      formatDate = layui.customDate,
+      LS = layui.localStorage,
+
+      params = customUtil.toQueryParams();
 
   var data = {
     "total": "4",
@@ -39,27 +51,48 @@ layui.use(['element', 'laypage', 'laytpl', 'jquery'], function(){
     view.innerHTML = html;
   });
 
-  laypage.render({
-    elem: 'test1', //注意，这里的 test1 是 ID，不用加 # 号
-    count: 50, //数据总数，从服务端得到
-    limit: 5,
-    layout: ['count', 'prev', 'page', 'next', 'skip'],
-    curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
-        var page = location.search.match(/page=(\d+)/);
-        return page ? page[1] : 1;
-    }(), //当前页
-    prev: '<上一页', //若不显示，设置false即可  
-    next: '下一页>',
-    jump: function(e, first){
-        if (!first) {
-            if(location.href.indexOf("?page")>0){
-                location.href = location.href.split("?page")[0]+'?page='+e.curr;
-            }else if(location.href.indexOf("?")>0){
-                location.href = location.href.split("&page")[0]+'&page='+e.curr;
-            }else{
-                location.href = location.href+'?page='+e.curr;
-            }
-        }
-    }
-  });
+  function bindEvent(){
+    var eventObj = {
+
+    };
+    E('body', eventObj);
+  }
+
+  function init(){
+
+    // 获取form数据
+    form.on('submit(formDemo)', function(data){
+      console.log(data.field);
+      return false;
+    })
+    // 分页
+    laypage.render({
+      elem: 'test1', //注意，这里的 test1 是 ID，不用加 # 号
+      count: 50, //数据总数，从服务端得到
+      limit: 5,
+      layout: ['count', 'prev', 'page', 'next', 'skip'],
+      curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+          var page = location.search.match(/page=(\d+)/);
+          return page ? page[1] : 1;
+      }(), //当前页
+      prev: '<上一页', //若不显示，设置false即可  
+      next: '下一页>',
+      jump: function(e, first){
+          if (!first) {
+              if(location.href.indexOf("?page")>0){
+                  location.href = location.href.split("?page")[0]+'?page='+e.curr;
+              }else if(location.href.indexOf("?")>0){
+                  location.href = location.href.split("&page")[0]+'&page='+e.curr;
+              }else{
+                  location.href = location.href+'?page='+e.curr;
+              }
+          }
+      }
+    });
+
+    bindEvent();
+  }
+
+  init();
+
 });

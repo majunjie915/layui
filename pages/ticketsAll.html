@@ -18,30 +18,30 @@
         <form class="layui-form" action="" style="display: none;" data-status="0">
           <div class="layui-form-item">
             <div class="layui-input-inline">
-              <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
+              <input type="text" name="title" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">演出时间：</label>  
             <div class="layui-input-inline">
-              <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;padding-left: 0;padding-right: 0;text-align: left;">~</label>  
             <div class="layui-input-inline">
-              <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间" name="endTime">
             </div>
             <div class="layui-input-inline">
-              <select name="distrWay">
+              <select name="distrWay" name="ticketStatus">
                 <option value="">票品状态</option>
                 <option value="1">在售中</option>
                 <option value="2">已下架</option>
               </select>
             </div>
-            <button class="layui-btn">筛选</button>
+            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
           </div>
         </form>
         <form class="layui-form" action="" style="display: none;" data-status="1">
           <div class="layui-form-item">
             <div class="layui-input-inline">
-              <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
+              <input type="text" name="title" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
             </div>
             <div class="layui-input-inline">
               <select name="distrWay">
@@ -50,23 +50,23 @@
                 <option value="2">审核未通过</option>
               </select>
             </div>
-            <button class="layui-btn">筛选</button>
+            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
           </div>
         </form>
         <form class="layui-form" action="" style="display: none;" data-status="2">
           <div class="layui-form-item">
             <div class="layui-input-inline">
-              <input type="text" name="title" required  lay-verify="required" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
+              <input type="text" name="title" placeholder="请输入节目名称" autocomplete="off" class="layui-input">
             </div>
             <label class="layui-form-label">演出时间：</label>  
             <div class="layui-input-inline">
-              <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间">
+              <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间" name="startTime">
             </div>
             <label class="layui-form-label" style="width: 20px; color: #ccc;padding-left: 0;padding-right: 0;text-align: left;">~</label>  
             <div class="layui-input-inline" style="margin-right: 20px;">
-              <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间">
+              <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间" name="endTime">
             </div>
-            <button class="layui-btn">筛选</button>
+            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
           </div>
         </form>
         <table class="layui-table">

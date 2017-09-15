@@ -1,7 +1,10 @@
-layui.use(['element', 'layer', 'ajax', 'configAPI', 'customUtil', 'jquery', 'localStorage', 'customEvent', 'customDate'], 
-  function(){
+layui.use(['element', 'layer', 'jquery', 'laytpl',
+  'ajax', 'configAPI', 'customUtil', 'localStorage', 'customEvent', 'customDate'], function(){
     var element = layui.element; 
-    var layer = layui.layer; 
+    var layer = layui.layer;
+    var $ = layui.jquery;
+    var laytpl = layui.laytpl;
+
     var ajax = layui.ajax;
     var API = layui.configAPI;
     var LS = layui.localStorage;
@@ -9,6 +12,7 @@ layui.use(['element', 'layer', 'ajax', 'configAPI', 'customUtil', 'jquery', 'loc
     var formatDate = layui.customDate;
     var customUtil = layui.customUtil;
     var params = customUtil.toQueryParams();
+
     var obj = {
         url: "../static/js/common/test.json",
         type: "get",
@@ -19,8 +23,6 @@ layui.use(['element', 'layer', 'ajax', 'configAPI', 'customUtil', 'jquery', 'loc
           LS.set("message", "hello world");
         },
     }
-
-    ajax(obj);
 
     function bindEvent(){
       var eventsObj = {
@@ -35,5 +37,11 @@ layui.use(['element', 'layer', 'ajax', 'configAPI', 'customUtil', 'jquery', 'loc
       E('body', eventsObj);
     }
 
-    bindEvent();
+    function init(){
+
+      ajax(obj);
+      bindEvent();
+    }
+
+    init();
 });

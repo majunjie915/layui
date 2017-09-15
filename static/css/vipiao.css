@@ -121,3 +121,37 @@
 .listOrders_form .layui-form-item label.layui-form-label{padding-left: 0;padding-right: 0;}
 .listOrders_form .layui-form-item div.reduceInput{width: 100px;}
 #orderList button.layui-btn{margin: 5px 0;}
+
+/*我的钱包*/
+.myWallet_record{
+	margin: 20px; border-bottom: solid 1px #aaa; 
+	padding: 20px 0 5px 0; font-weight: 700;
+	clear: both;
+}
+.myWallet_accountInfo{margin: 20px;}
+.myWallet_accountInfo>div{
+	border: solid 1px #ccc; border-radius: 5px;
+	padding: 10px 20px 0 20px;
+}
+.myWallet_accountInfo>div>h3{font-size: 16px; font-weight: 700; margin-bottom: 10px;}
+.myWallet_accountInfo>div>p:last-of-type{
+	clear: both; height: 30px; line-height: 30px;
+	border-top: dotted 1px #ccc;
+	margin-top: 10px;
+}
+.myWallet_balance{margin-right: 20px; box-sizing: border-box;}
+.myWallet_balance p:first-of-type{margin-top: 13px;}
+.myWallet_balance .total{
+	font-size: 26px; color: red;
+	font-weight: 700;margin-right: 20px;
+}
+.myWallet_balance .canDraw{color: red;}
+.myWallet_balance .layui-btn{float: right; padding: 0 20px;}
+
+.myWallet_bindCard img{
+	width: 56px; float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 3px;
+}
+.myWallet_bindCard p:nth-of-type(2){margin-top: 5px;}

@@ -1,0 +1,109 @@
+@@include("./tmpl/header.txt")
+  <div class="layui-body" style="left: 16%;">
+    <!-- <p class="personalInfo_nav">      
+      <span class="layui-breadcrumb">
+        <a href="vipiao.html">首页</a>
+        <a href="listOrders.html">订单管理</a>
+        <a><cite>订单管理列表</cite></a>
+      </span>
+    </p> -->
+    <div class="layui-raw myWallet_accountInfo">
+    	<div class="layui-col-md5 myWallet_balance">
+    		<h3>账户余额</h3>
+    		<p>
+    			<span class="total">￥2064.00</span>
+    			可提现金额：<span class="canDraw">1098.01</span>
+    			<button class="layui-btn layui-btn-normal layui-btn-small">提现</button>
+    		</p>
+    		<p>提现的金额将直接转入您绑定的银行，大约3个工作日到账。</p>
+    	</div>
+    	<div class="layui-col-md4 myWallet_bindCard">
+    		<h3>绑定银行卡</h3>
+    		<img src="../static/images/u=2397973346,3439973448&fm=200&gp=0.jpg">
+    		<p>中国农业银行</p>
+    		<p>6225 **** **** 4562</p>
+    		<p>修改 绑定的银行卡，请联系客服。</p>
+    	</div>
+    </div>
+    <h3 class="myWallet_record">收支记录</h3>
+    <!-- 内容主体区域 -->
+    <div style="margin: 20px;" class="programs_list" class="">
+        <form class="layui-form listOrders_form" action="" style="display: block;">
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <input type="text" name="orderNum" placeholder="请输入节目标题或订单号" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">订单时间：</label>
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginStart" placeholder="开始时间" name="startTime">
+            </div>
+            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <div class="layui-input-inline reduceInput">
+              <input type="text" class="layui-input" id="datePluginEnd" placeholder="结束时间" name="endTime">
+            </div>
+            <div class="layui-input-inline reduceInput">
+              <select name="transactionType">
+                <option value="">交易类型</option>
+                <option value="1">收入</option>
+                <option value="2">支出</option>
+                <option value="3">提现</option>
+              </select>
+            </div>
+            <div class="layui-input-inline" style="width: 64px;">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+          </div>
+        </form>
+        <table class="layui-table">
+          <thead>
+            <tr>
+              <th>流水号</th>
+              <th>日期</th>
+              <th>收入（元）</th>
+              <th>支出（元）</th>
+              <th>交易类型</th>
+              <th>说明</th>
+            </tr> 
+          </thead>
+          <tbody id="transactionList">
+            <tr>
+		        <td>125631</td>
+		        <td>2017-05-11 10:56:45</td>
+		        <td>360</td>
+		        <td></td>
+		        <td>交易收入</td>
+		        <td>演出名：周杰伦xxx，成交金额：360.0</td>
+		      </tr>
+		      <tr>
+		        <td>125632</td>
+		        <td>2017-06-11 15:56:45</td>
+		        <td></td>
+		        <td style="color: blue;">-350</td>
+		        <td>提现支出</td>
+		        <td>提现转出，状态：进行中</td>
+		      </tr>
+		      <tr>
+		        <td>125633</td>
+		        <td>2017-08-11 7:56:45</td>
+		        <td></td>
+		        <td style="color: blue;">-360</td>
+		        <td>提现支出</td>
+		        <td>提现转出，状态：驳回</td>
+		      </tr>
+          </tbody>
+        </table>
+        <div id="pages" style="text-align: center;"></div>
+    </div>
+  </div>
+
+  <script type="text/html" id="transactionListT">
+    {{# layui.each(d.list, function(index, item){ }}
+      
+    {{# }); }}
+    {{# if(d.list.length === 0){ }}
+      <tr><td colspan="12">暂无数据......</td></tr>
+    {{# } }}
+  </script>
+@@include("./tmpl/footer.txt")
+@@include("./tmpl/footer-script.txt")
+<script type="text/javascript" src="../static/js/pages/myWallet.js"></script>
