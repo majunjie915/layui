@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>唯票商家后台管理系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">  
+  <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+  <link rel="stylesheet" href="../static/css/vipiao.css"  media="all">
+  <!-- 让IE8/9支持媒体查询 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="layui-layout layui-layout-admin layui-layout-vipiao">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="../static/images/logo.png" alt=""></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <!-- <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="vipiao.html">首页</a></li>
+      <li class="layui-nav-item"><a href="">用户管理</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">系统管理</a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">账户信息</a></dd>
+          <dd><a href="">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">使用手册</a></li>
+    </ul> -->
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          唯票
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">账户信息</a></dd>
+          <dd><a href="changePassword.html">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">注销</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black" style="width:16%;">
+    <div class="layui-side-scroll" style="width:100%;">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree nav_left"  lay-filter="test"  style="width:100%;">
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;"><img src="../static/images/merchant.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
+          <dl class="layui-nav-child">
+            <dd class="vipiao"><a href="vipiao.html">店铺概览</a></dd>
+            <dd class="myWallet"><a href="myWallet.html">我的钱包</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/project.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
+          <dl class="layui-nav-child">
+            <dd class="programs"><a href="programs.html">发布票源</a></dd>
+            <dd class="ticketsAll"><a href="ticketsAll.html">票品管理</a></dd>
+            <dd class="listOrders"><a href="listOrders.html">订单管理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />营销中心</a>
+          <dl class="layui-nav-child">
+            <dd class="discount"><a href="discount.html">打折促销</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/systemManage.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
+          <dl class="layui-nav-child">
+            <dd class="personalInfo"><a href="personalInfo.html">账户信息</a></dd>
+            <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>
+          </dl>
+        </li>
+	<li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 16px;height: 18px;margin-right: 6px" />商户规则</a>
+          <dl class="layui-nav-child">
+            <dd class="businessRules"><a href="businessRules.html">商户规则</a></dd>
+          </dl>
+        </li>
+        <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
+      </ul>
+    </div>
+  </div>
+<div class="layui-body">
+	<p class="personalInfo_nav" style="margin: 20px;">      
+      <span class="layui-breadcrumb">
+        <a href="vipiao.html">首页</a>
+        <a href="businessRules.html">商户规则</a>
+        <a><cite>商户规则</cite></a>
+      </span>
+    </p>
+    <h2 style="margin: 20px; text-align: center; font-weight: 700; font-size: 22px;">唯票商户规则</h2>
+    <article style="margin: 20px;">
+        <h3 class="businessRules_seconedTitle">第一章&nbsp;&nbsp;概述</h3>
+        <br/>
+        <p>第一条&nbsp;&nbsp;为促进开放、透明、分享、责任的新商业文明，保障唯票商户合法权益，维护唯票正常经营秩序，根据《唯票商户入驻协议》以及《唯票尾票协议》制定本规则。</p>
+        <p>第二条&nbsp;&nbsp;唯票商户规则，是对唯票商户增加基本义务或限制基本权利的条款。</p>
+        <p>第三条 &nbsp;&nbsp;违规行为的认定与处理，应基于唯票认定的事实并严格依规执行。唯票商户在适用规则上一律平等。</p>
+        <p>第四条&nbsp;&nbsp; 商户应遵守国家法律、行政法规、部门规章等规范性文件。对任何涉嫌违反国家法律、行政法规、部门规章等规范性文件的行为，本规则已有规定的，适用本规则；本规则尚无规定的，唯票有权酌情处理。但唯票对商户的处理不免除其应尽的法律责任。商户在唯票的任何行为，应同时遵守与唯票所签订的各项协议。唯票有权随时变更本规则并在网站上予以公告。若商户不同意相关变更，应立即停止使用唯票的相关服务或产品。唯票有权对商户行为及应适用的规则进行单方认定，并据此处理。</p>
+        <br/>
+        <br/>
+        <h3 class="businessRules_seconedTitle">第二章&nbsp;&nbsp;定义</h3>
+        <br/>
+        <p>第五条&nbsp;&nbsp; 唯票，唯票平台经营者的单称或合称，包括唯票经营者上海颂品网络科技有限公司 ；</p>
+        <p>第六条 &nbsp;&nbsp;用户，指具有完全民事行为能力的唯票各项服务的使用者。</p>
+        <p>第七条 &nbsp;&nbsp;商户，指在唯票上挂售票品的用户。</p>
+        <p>第八条 &nbsp;&nbsp;日期更换，指用户所购演出票档商户无票情况下需进行同演出不同日期的更换；</p>
+        <p>第九条&nbsp;&nbsp; 票档升级，指用户所购演出票档商户无票情况下需进行同演出票档的升级；</p>
+        <p>第十条&nbsp;&nbsp; 演出开票，指演出项目从预售中转变为售票中，状态转变依照该演出票务总代的状态转变为准；</p>
+        <p>第十一条&nbsp;&nbsp; 特殊售卖权限，为演出项目预售状态的挂售权限，尾票状态的挂售权限，内场前排票档的挂售权限，以及票品非卖品的售卖权限；</p>
+        <br/>
+        <br/>
+        <h3 class="businessRules_seconedTitle">第三章&nbsp;&nbsp;交易</h3>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第一节&nbsp;经营</h4>
+        <br/>
+        <p>第十二条&nbsp;&nbsp; 商户必须符合以下条件，方可按照唯票系统设置的流程挂售票品：</p>
+        <ul>
+            <li>（一）商户已提供本人（包括企业）真实有效的信息，并通过唯票认证审核；</li>
+            <li>（二）商户已同意并签署唯票网平台入驻协议；</li>
+            <li>（三）商户已同意并按照服务确认清单缴纳技术服务费用；</li>
+            <li>（四）商户已绑定并开通钱包功能；</li>
+        </ul>
+        <p>第十三条&nbsp;&nbsp; 商户必须按照唯票认证要求，提供本人（包含企业）真实有效的信息，提供的信息包括但不限于：身份信息、有效联系方式、真实地址等证明身份真实性、有效性、一致性的信息；对于信息不全、无效或虚假的，将无法通过认证。商户应当严格遵循唯票系统设置的认证流程完成认证。商户在填写唯票店铺名称时应遵守国家法律法规，不得包含违法、涉嫌侵犯他人权利或干扰唯票运营秩序等相关信息。注册后名称一经确认将无法自行修改。</p>
+        <p>第十四条&nbsp;&nbsp; 【特殊售卖权限保证金】申请开通特殊售卖权限需冻结保证金，于申请退出特殊售卖权限的2个工作日内进行保证金解冻。</p>
+        <p>第十五条&nbsp;&nbsp; 【保证金补足】特殊售卖权限开通期间冻结保证金如因转采或者罚款造成冻结金额不足时，应在24小时内对保证金的总额进行补足，如未在24小时补足将解除特殊售卖权限。</p>
+        <p>第十六条&nbsp;&nbsp; 商户应当按照唯票系统设置的流程和要求挂售票品。唯票商户账户已通过实名认证并开通钱包账户，即可挂售票品，唯票商户挂售票品时可能受到以下限制：</p>
+        <ul>
+            <li>（一）当商户挂售演出票档库存张数超过20张时，唯票将进行人工审核；</li>
+            <li>（二）当商户挂售演出票档超过票面价3倍或者低于85折时，唯票将进行人工审核；</li>
+            <li>（三）当商户该票档挂售有吆喝内容时，唯票有权对其挂售票档进行人工审核；</li>
+        </ul>
+        <p>第十七条&nbsp;&nbsp; 商户应保证所挂售票品信息的真实性是商户的基本责任。“票品真实性”是指商户在唯票所提供的演出展示渠道中，应当对挂售票品对应的时间、场馆、地址、区域、座位、票价等信息的真实性承担保证责任。挂售票品时所填写的吆喝的内容应按照唯票平台要求进行设置，禁止字词包括但不限于“独家”、“主办方”、“总代”等字词以及《中华人民共和国广告法》明令禁止的字词。</p>
+        <p>第十八条&nbsp;&nbsp; 已创建的商户账户若连续6个月挂售的票品数量或者成交订单数量均为零，唯票有权将该账号驳回为个人账户。一个唯票商户仅能拥有一个可挂售票品的商户账户。</p>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第二节&nbsp;发货</h4>
+        <br/>
+        <p>第十九条&nbsp;&nbsp; 商户自收到订单成交信息后，若该成交订单演出为售卖中，应根据挂售票品时所承诺的发货时间，按时将票品送至唯票进行审核验收。</p>
+        <p>第二十条&nbsp;&nbsp; 商户自收到订单成交信息后，若该成交订单演出为预售状态，则在演出开票后，应根据挂售票品时所承诺的发货时间，按时将票品送至唯票进行审核验收。</p>
+        <p>第二十一条&nbsp;&nbsp; 商户自收到订单成交信息后，若该成交订单演出为开票状态，商户无法根据挂售票品时所承诺发货时间，此订单将作为无票订单进行处理</p>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第三节&nbsp;结算</h4>
+        <br/>
+        <p>第二十二条&nbsp;&nbsp; 普通票情况下，商户将票品送至唯票后，唯票将在1个工作日内完成审核并入库。确认无误后票款将转至商户唯票钱包内，商户申请票款提现后1个工作日内完成转账打款。</p>
+        <p>第二十三条&nbsp;&nbsp; 尾票情况下，商户将票品送至唯票工作人员或用户后，待演出结束后1个工作日内无客诉情况下完成确认。确认后票款将转至商户唯票钱包内，商户申请票款提现后1个工作日内完成转账打款。</p>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第四节&nbsp;退换货</h4>
+        <br/>
+        <p>第二十四条&nbsp;&nbsp; 如因不可抗力因素导致演出取消或延期（依据：主办方通知的因演出取消/延期安排的退票时间、转场时间段），唯票会与商户联系退款事宜，将根据订单实际结算金额进行退款操作。</p>
+        <p>第二十五条&nbsp;&nbsp; 如遇特殊原因导致的票品不符（座位不符、低于票面价、涂改票、假票等）等原因发生退换货，产生的一切费用由商户承担。</p>
+        <br/>
+        <br/>
+        <h3 class="businessRules_seconedTitle">第四章&nbsp;&nbsp;违规行为及违规处理</h3>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第一节&nbsp;违规处理措施</h4>
+        <br/>
+        <p>第二十六条&nbsp;&nbsp; 商户应积极提升自身经营状况，为消费者提供符实的票品及优质的服务。对于提供符实的票品及优质的服务等情形的商户，唯票会适当给予鼓励或扶持的措施。</p>
+        <p>第二十七条&nbsp;&nbsp; 为保障消费者、经营者或唯票的正当权益，在商户违规处理期间唯票按照本规则规定的情形对商户采取以下违规处理措施：</p>
+        <ul>
+            <li>（一）票品下架， 下架违规挂售票品或者所有挂售中的票品；</li>
+            <li>（二）排序降权，指调整商户所挂售票品在搜索结果中的排序；</li>
+            <li>（三）限制挂售，指禁止唯票商户挂售新票品；</li>
+            <li>（四）退一罚一，指普通票订单无票情况下所赔付的费用（遇订单无票情况下，与用户沟通协调后，仍然无法交付完成订单记为无票订单，进行退一罚一）；</li>
+            <li>（五）退一罚三，指尾票订单无票情况下所赔付的费用（遇订单无票情况下，与用户沟通协调后，仍然无法交付完成订单记为无票订单，进行退一罚三）；</li>
+            <li>（六）账号冻结，指冻结商户账号，暂时停止商户在唯票经营活动，包括票品下架、限制挂售等经营行为，暂时停止唯票钱包服务，包括不限于冻结钱包账款，限制提现功能；</li>
+            <li>（七）公示警告，指在唯票的商户后台页面，对唯票商户正在被执行的处理进行公示；</li>
+            <li>（八）查封账户，指永久禁止商户使用违规账户登录唯票；</li>
+        </ul>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第二节&nbsp;违规规则条款</h4>
+        <br/>
+        <p>第二十八条&nbsp;&nbsp; 商户发生违规行为时，其违规行为应当纠正，并根据唯票规则条款进行处罚。一些严重破坏唯票经营秩序或涉嫌违反国家法律法规的行为，将进行严厉处罚并追究法律责任。</p>
+        <p>第二十九条&nbsp;&nbsp; 唯票对商户的违规行为h2取以下节点处理方式： </p>
+        <ul>
+            <li>
+                （一）普通票阶段对以下违规行为或者市场情形唯票予以票品下架、排序降权和限制挂售，无票退一罚一等处理：
+                <p>1. 普通票阶段商户收到订单成交信息后，告知订单票品无票，顾客不愿更改日期，不愿补差升降票档等情况下，最终无法交付完成订单的记为无票订单（除演唱会外其他类目单周累计前二单不记处罚）；</p>
+                <p>2. 实际交付票品票面价低于订单关联票品票面价，商户最终无法交付完成订单记为无票；</p>
+                <p>3. 实际交付票品相关信息与订单关联票品信息不符，商户最终无法交付完成订单的记为无票订单；</p>
+                <p>4. 实际交付票品为废票、赠票、有非卖品或折扣票字样以及无票面价等问题，导致用户有异议投诉，商户最终无法交付完成订单的记为无票订单；</p>
+                <p>5. 实际交付票品有涂改，导致用户有异议投诉，商户最终无法交付完成订单的记为无票订单；</p>
+                <p>6. 交易订立过程中商户在吆喝中自行承诺（如指定座位、提高票档和促销等信息），但实际未遵从相关承诺或约定的，导致用户有异议投诉，商户最终无法交付完成订单的的记为无票订单；</p>
+            </li>
+            <li>
+                （二）尾票阶段对以下违规行为或者市场情形唯票予以票品下架、排序降权和限制挂售，无票退一罚三等处理： 
+                <p>1. 平台派票阶段商户订单票品无法在演出开演1小时前送达至唯票工作人员处的，将扣除配合度和延迟发货得分，最终无法交付完成订单的记为无票订单；</p>
+                <p>2. 商户派票阶段：必须演出开演1小时前准备好票品并保持联系畅通，未能在演出开演20分钟前将票品交付给顾客的，将扣除配合度和延迟发货得分，最终无法交付完成订单的记为无票订单；</p>
+                <p>3. 商户派票阶段私下联系用户更换订单状态（如调换演出时间、场次和票档等问题），如用户投诉并无法派送该订单对应票品，将扣除配合度和延迟发货得分，最终无法交付完成订单的记为无票订单；</p>
+            </li>
+            <li>
+               （三）对以下违规行为或者市场情形唯票予以票品下架、限制挂售和账号冻结等处理：
+               <p>1. 加入唯票官方活动的商户，未按照活动要求提供票品以及服务的；</p> 
+               <p>2. 商户演唱会类目产生无票订单单月累计满2笔，其他类目无票订单单周累计满10笔将对其做账户冻结7天处理；</p> 
+               <p>3. 商户演唱会类目产生无票订单单季累计满5笔，其他类目无票订单单月满20笔将对其做账户冻结30天处理；</p> 
+               <p>4. 商户尾票售票阶段产生无票订单累计满1笔，将对其账户冻结7天处理。产生无票订单累计满3笔，将对其账号冻结30天处理；</p> 
+            </li>
+            <li>
+               （四）对以下违规行为或者市场情形唯票予以账户查封处理：
+               <p>1. 商户演唱会类目产生无票订单单季累计满8笔，其他类目无票订单单月满30笔将对其做账户查封处理；</p> 
+               <p>2. 商户因违反唯票规则条款累计满3次账户冻结处罚时，将对其做账户查封处理；</p> 
+               <p>3. 由于商户所挂售票品问题而引起新闻媒体曝光，国家相关行政管理部门通报介入，唯票合作方、演出主办方、演出场馆投诉的；</p> 
+               <p>4. 商户出售假票；</p> 
+               <p>5. 骗取他人财物，是指以非法获利为目的，非法获取他人财物，涉嫌侵犯他人财产权的行为；</p> 
+               <p>6. 恶意下单，平台商户因操作失误导致挂售票档和票价错误等情况，被平台其他商户恶意下单的，如若发现订单一律做取消处理。情节恶劣将做账户查封处理；</p> 
+               <p>7. 扰乱市场秩序，是指以任何方式，刻意规避唯票的各类规则，或以不正当的方式获取、使用唯票官方资源的行为。扰乱市场秩序的，唯票有权取消商户以不正当方式获得、使用的官方资源；</p> 
+               <p>8. 泄露他人信息 ，是指未经允许发布、传递他人隐私信息，涉嫌侵犯他人隐私权的行为。 </p> 
+               <p>9. 恶意骚扰，是指商户采取恶劣手段骚扰他人，妨害他人合法权益的行为；</p> 
+               <p>10. 不正当谋利，是指商户采用不正当手段谋取利益的行为，包括： </p> 
+               <p>&nbsp;&nbsp;（1）向唯票工作人员及/或其关联人士提供财物、消费、款待或商业机会等；</p>
+               <p>&nbsp;&nbsp;（2）通过其他手段谋取不正当利益的。无论是否获得利益的；</p>
+               <p>&nbsp;&nbsp;有以下情形之一的，视同为不正当谋利行为：</p>
+               <p>&nbsp;&nbsp;（1）商户为唯票工作人员的；</p>
+               <p>&nbsp;&nbsp;（2）商户为唯票工作人员之关联人士且该唯票工作人员未依据规定进行如实申报，若有利用唯票工作人员职务便利条件的；</p>
+               <p>11. 不当注册，是指用户通过软件、程序等方式，大批量注册唯票账户；或通过已注册的唯票账户，滥用商户权利损害他人合法权益、妨害唯票运营秩序的行为。不当注册的，唯票对使用软件或程序方式大批量注册而成的账户进行查封、对滥用权利导致的订单予以关闭并予以账户查封处理。<br/>唯票官方发布的其他管理内容（包括但不仅限于规则、规范、行业标准等），对上述行为的规定符合特定情形的，从其规定；除上述列举的行为外，唯票官方发布的其他管理内容（包括但不仅限于规则、规范、行业标准等）中认为构成违背承诺行为的，从其规定。</p>
+            </li>
+        </ul>
+        <p>第三十条&nbsp;&nbsp; 商户因单次违规处罚较大，导致累积处罚满足多个节点处理条件的，或在违规处理期间又须执行同类节点处理的，仅执行最重的节点处理。</p>
+        <br/>
+        <h4 class="businessRules_thirdTitle">第三节&nbsp;违规发现及申诉</h4>
+        <br/>
+        <p>第三十一条&nbsp;&nbsp; 商户的投诉或唯票排查发现。</p>
+        <p>第三十二条&nbsp;&nbsp; 对票品不符、违背承诺、恶意骚扰、骗取他人财物等违规行为，被投诉人须在被投诉之日起3天内提交证据。逾期未提交证据的，唯票有权根据当时所掌握的情况进行判断与处理。对其余违规行为的判断与处理，唯票在收到投诉后立即进行。 </p>
+        <p>第三十三条&nbsp;&nbsp; 商户可在被违规处理之时起7工作日内(唯票审核时间除外)联系唯票招商工作人员通过邮件方式提交违规申诉申请。</p>
+        <p>第三十四条&nbsp;&nbsp; 商户自行作出的承诺或说明与本规则相悖的，唯票不予采信。除证据有误或判断错误的情形外，对违规行为的处理不中止、不撤销。</p>
+        <br/>
+        <br/>
+        <h3 class="businessRules_seconedTitle">附则</h3>
+        <br/>
+        <p>第三十五条&nbsp;&nbsp;  唯票用户的行为，发生在本规则生效或修订以前的，适用当时的规则；发生在本规则生效或修订以后的，适用本规则。</p>
+        <p>第三十六条&nbsp;&nbsp;  本规则中的以上，包含本数；本规则中的以下，不包含本数。</p>
+        <p>第三十七条&nbsp;&nbsp;  本规则中的“天”，以24小时计算。</p>
+    </article>
+</div>
+  <div class="layui-footer" style="left:16%;">
+    <!-- 底部固定区域 -->
+    <p>京ICP备15008001号-1 京公网安备11010102000024号</p>
+    <p>北京盈拓文化传媒有限公司 CopyRight © 2014-2017 All Rights Reserved</p>
+  </div>
+</div>
+</body>
+</html>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script src="../static/js/global.js" charset="utf-8"></script>
+<script>
+layui.use(['element', 'jquery'], function(){
+	var element = layui.element;
+	var $ = layui.jquery;
+	var alldds = $(".nav_left li dd");
+	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";
+	
+	if(cur_nav_left_dd==" layui-this"){
+		$(alldds[0]).addClass("layui-this").closest("li").addClass("layui-nav-itemed");
+	}else{
+		for(var i = 0; i < alldds.length; i++){
+			$(alldds[i]).removeClass("layui-this");
+			if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
+				$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+			}
+		}
+	}
+		 
+});
+</script>

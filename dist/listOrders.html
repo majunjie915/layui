@@ -43,7 +43,7 @@
         </a>
         <dl class="layui-nav-child">
           <dd><a href="personalInfo.html">账户信息</a></dd>
-          <dd><a href="">修改密码</a></dd>
+          <dd><a href="changePassword.html">修改密码</a></dd>
         </dl>
       </li>
       <li class="layui-nav-item"><a href="">注销</a></li>
@@ -82,11 +82,17 @@
             <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>
           </dl>
         </li>
+	<li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 16px;height: 18px;margin-right: 6px" />商户规则</a>
+          <dl class="layui-nav-child">
+            <dd class="businessRules"><a href="businessRules.html">商户规则</a></dd>
+          </dl>
+        </li>
         <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
       </ul>
     </div>
   </div>
-  <div class="layui-body" style="left: 16%;">
+  <div class="layui-body">
     <!-- <p class="personalInfo_nav">      
       <span class="layui-breadcrumb">
         <a href="vipiao.html">首页</a>
@@ -112,7 +118,7 @@
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginStart1" placeholder="开始时间" name="startTime">
             </div>
-            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <label class="layui-form-mid layui-word-aux">~</label>  
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginEnd1" placeholder="结束时间" name="endTime">
             </div>
@@ -151,7 +157,7 @@
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginStart2" placeholder="开始时间" name="startTime">
             </div>
-            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <label class="layui-form-mid layui-word-aux">~</label>  
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginEnd2" placeholder="结束时间" name="endTime">
             </div>
@@ -169,7 +175,7 @@
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginStart3" placeholder="开始时间" name="startTime">
             </div>
-            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <label class="layui-form-mid layui-word-aux">~</label>  
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginEnd3" placeholder="结束时间" name="endTime">
             </div>
@@ -187,7 +193,7 @@
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginStart4" placeholder="开始时间" name="startTime">
             </div>
-            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <label class="layui-form-mid layui-word-aux">~</label>  
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginEnd4" placeholder="结束时间" name="endTime">
             </div>
@@ -219,7 +225,7 @@
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginStart5" placeholder="开始时间" name="startTime">
             </div>
-            <label class="layui-form-label" style="width: 20px; color: #ccc;text-align: left;">~</label>  
+            <label class="layui-form-mid layui-word-aux">~</label>  
             <div class="layui-input-inline reduceInput">
               <input type="text" class="layui-input" id="datePluginEnd5" placeholder="结束时间" name="endTime">
             </div>
@@ -308,7 +314,8 @@ layui.use(['element', 'jquery'], function(){
 
   <div class="layui-footer" style="left:16%;">
     <!-- 底部固定区域 -->
-    © 北京盈拓文化传媒有限公司 版权所有
+    <p>京ICP备15008001号-1 京公网安备11010102000024号</p>
+    <p>北京盈拓文化传媒有限公司 CopyRight © 2014-2017 All Rights Reserved</p>
   </div>
 </div>
 </body>

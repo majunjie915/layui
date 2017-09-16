@@ -43,7 +43,7 @@
         </a>
         <dl class="layui-nav-child">
           <dd><a href="personalInfo.html">账户信息</a></dd>
-          <dd><a href="">修改密码</a></dd>
+          <dd><a href="changePassword.html">修改密码</a></dd>
         </dl>
       </li>
       <li class="layui-nav-item"><a href="">注销</a></li>
@@ -82,12 +82,18 @@
             <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>
           </dl>
         </li>
+	<li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 16px;height: 18px;margin-right: 6px" />商户规则</a>
+          <dl class="layui-nav-child">
+            <dd class="businessRules"><a href="businessRules.html">商户规则</a></dd>
+          </dl>
+        </li>
         <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
       </ul>
     </div>
   </div>
-  <input file="file" accept="image/*;capture=camera">
-  <div class="layui-body layui-tab-card" style="left: 16%;">
+<script type="text/javascript" src="../lib/echarts.min.js"></script>
+  <div class="layui-body layui-tab-card">
     <ul class="layui-tab-title" id="admin-tab">
         <li class="layui-this">
             <i class="layui-icon" style="top: 2px; font-size: 16px;"></i>
@@ -109,8 +115,8 @@
           <p>
             账户余额：<span class="index_top_balance">￥1959.00</span>
             <span class="layui-breadcrumb index_top_changeInfo" lay-separator="|">
-              <a href="">提现</a>
-              <a href="">收支明细</a>
+              <a href="javascript:;">提现</a>
+              <a href="myWallet.html">收支明细</a>
             </span>
           </p>
         </section>
@@ -118,15 +124,15 @@
         <section class="index_bottom">
           <p class="index_bottom_title">待办事项</p>
           <ul class="index_bottom_content">
-            <li>
+            <li data-action="toOrderList" data-status="1">
               <p>待确认订单：</p>
               <h3>6</h3>
             </li>
-            <li>
+            <li data-action="toOrderList" data-status="2">
               <p>待发货订单：</p>
               <h3>8</h3>
             </li>
-            <li>
+            <li data-action="toOrderList" data-status="0">
               <p>库存不足：</p>
               <h3>6</h3>
             </li>
@@ -138,7 +144,7 @@
           <p class="index_bottom_title">营销工具</p>
           <ul class="index_middle_content">
             <li>
-              <p>打折促销</p>
+              <a href="discount.html"><p>打折促销</p></a>
             </li>
             <li>
               <p>套餐组合</p>
@@ -174,17 +180,24 @@
           </ul>
         </div>
         <div class="blank30"></div>
-        <div class="index_notice">
-          <h3>通知栏<a href=""><span>更多></span></a></h3>
-          <ul>
-            <li><a href="">【新增演出】7.13北京新增演出<span>07-13</span></a></li>
-            <li><a href="">【公告】新上线打折促销功能<span>07-10</span></a></li>
-            <li><a href="">【提现说明】商家提现规则须知<span>07-18</span></a></li>
-            <li><a href="">【新增演出】7.19上海新增演出<span>07-19</span></a></li>
+        <div class="index_notice">         
+          <ul class="orderWay">
+            <li class="choosed">销售额</li>
+            <li>订单数</li>
+          </ul>        
+          <ul class="summaryCycle">
+            <li>汇总周期：</li>
+            <li class="choosed">日</li>
+            <li>月</li>
+            <li>年</li>
           </ul>
+          <p class="unit">销售额（万元）</p>
+          <div id="main" style="width: 93%; height: 400px;">          
+          </div>
         </div>
       </div>
     </div>
+    <div class="blank30"></div>
   </div>
 <script src="../lib/layui/layui.js" charset="utf-8"></script>
 <script src="../static/js/global.js" charset="utf-8"></script>
@@ -209,12 +222,12 @@ layui.use(['element', 'jquery'], function(){
 });
 </script>
  
-<script type="text/javascript" src="../static/js/pages/index.js"></script> 
   <div class="layui-footer" style="left:16%;">
     <!-- 底部固定区域 -->
-    © 北京盈拓文化传媒有限公司 版权所有
+    <p>京ICP备15008001号-1 京公网安备11010102000024号</p>
+    <p>北京盈拓文化传媒有限公司 CopyRight © 2014-2017 All Rights Reserved</p>
   </div>
 </div>
 </body>
 </html> 
-
+<script type="text/javascript" src="../static/js/pages/index.js"></script> 

@@ -4,6 +4,7 @@
 ::-webkit-scrollbar-thumb{border-radius:0;background-color:rgba(0,0,0,.3)}
 ::-webkit-scrollbar-thumb:vertical:hover{background-color:rgba(0,0,0,.35)}
 ::-webkit-scrollbar-thumb:vertical:active{background-color:rgba(0,0,0,.38)}
+.layui-layout-admin .layui-body{left: 16%; bottom: 60px;}
 .layui-layout-vipiao .layui-side .layui-nav-item .layui-icon{
 	margin-right: 6px;
 }
@@ -17,6 +18,12 @@
 .custom_nav li:hover{color: #666;}
 .show{border-bottom: solid 2px green;}
 .postTicBtn{float: right;margin-top: 10px;}
+
+.layui-layout-admin .layui-footer{font-size: 12px; line-height: 20px; text-align: center; height: 50px; padding-top: 10px;}
+
+/*商户规则*/
+.businessRules_seconedTitle{font-size: 18px;}
+.businessRules_thirdTitle{font-size: 16px;}
 
 /*首页*/
 .index_container{padding: 20px;}
@@ -69,6 +76,7 @@
 	margin-top: 30px;
 	background: #dbc795;
 	margin-top: 30px;
+	cursor: pointer;
 }
 .index_bottom_content li:nth-of-type(2){
 	background: #b3c2be;
@@ -91,7 +99,7 @@
 }
 .index_middle_content li p{text-align: center; line-height: 155px;}
 
-.index_notice{padding: 15px;}
+.index_notice{padding: 15px;position: relative;}
 .index_notice h3{font-size: 17px; font-weight: 700; height: 30px;border-bottom: solid 1px #aaa;}
 .index_notice h3 span{float: right; font-weight: 400; font-size: 14px;}
 .index_notice ul{margin-top: 10px;}
@@ -103,6 +111,27 @@
 .salesInfo li{float: left; border-right: solid 1px #999; text-align: center; width: 40%;}
 .salesInfo li:last-of-type{border-right: none;}
 .salesInfo li h3{font-size: 16px; font-weight: 600;margin-top: 10px;}
+.index_notice ul.orderWay{
+	position: absolute;left: 10px;top: 10px;
+	float:left;width: 44%;margin-top: 0;
+}
+.index_notice ul.orderWay li{
+	float: left; width: 40%;text-align: center;cursor: pointer;
+}
+.index_notice ul.summaryCycle{
+	position: absolute; right: 10px;top: 10px;
+	float: right; width: 50%;
+	margin-top: 0;
+}
+.index_notice ul.summaryCycle li{
+	float: left; width: 16%;text-align: center;cursor: pointer;
+}
+.index_notice ul.summaryCycle li:first-of-type{width: 50%;}
+.choosed{background: #ccc; border-radius: 3px;}
+.index_notice p.unit{
+	position: absolute; left: 10px;top: 50px;float: left;
+	font-size: 12px;color: #aaa;
+}
 /*个人信息*/
 .layui-body .personalInfo_nav{
 	background: #eee;
