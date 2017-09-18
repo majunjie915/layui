@@ -29,6 +29,9 @@ layui.use(['element', 'laypage', 'laydate', 'jquery', 'laytpl', 'layer', 'form',
           }
         }
         LS.set("ticketStatus", $(this).data("status"));
+      },
+      deleteTheTicket: function(){
+        $(this).closest("tr").remove();
       }
     };
     E("body", eventsObj);

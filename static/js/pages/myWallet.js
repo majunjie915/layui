@@ -16,7 +16,6 @@ layui.use(['element', 'jquery', 'laytpl', 'laydate', 'laypage', 'layer', 'form',
 
 		params = customUtil.toQueryParams();
 
-
 		var data = {
       		list: []
     	};
@@ -28,7 +27,27 @@ layui.use(['element', 'jquery', 'laytpl', 'laydate', 'laypage', 'layer', 'form',
 
 		function bindEvent(){
 			var eventObj = {
-
+				withDraw: function(){
+					layer.open({
+						title: '提现到银行卡'
+					    ,content: '<p style="line-height: 2.5;">银行卡号： <span>6222 **** **** 4305</span></p>'+
+					  			'<p style="line-height: 2.5;">提现金额： '+
+					  			'<input type="text" style="width:100px;height:30px">  元'+
+					  			'</p>'+
+					  			'<p style="line-height: 2.5;">可提现金额： <span>2250</span></p>'
+					    ,btn: ['确认转出', '取消']
+					    ,yes: function(index, layero){
+					    	//按钮【按钮一】的回调
+					    	console.log(layero)
+                			$(".layui-layer-dialog, .layui-layer-shade").hide();
+					    }
+					    ,cancel: function(){ 
+					    	//右上角关闭回调
+					    
+					    	//return false 开启该代码可禁止点击该按钮关闭
+					    }
+					});
+				}
 			};
 
 			E("body", eventObj);

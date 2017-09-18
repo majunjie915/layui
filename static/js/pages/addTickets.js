@@ -1,9 +1,10 @@
-layui.use(['element', 'layer', 'jquery', 'laytpl',
+layui.use(['element', 'layer', 'jquery', 'laytpl', 'form',
   'ajax', 'configAPI', 'customUtil', 'localStorage', 'customEvent', 'customDate'], function(){
     var element = layui.element; 
     var layer = layui.layer;
     var $ = layui.jquery;
     var laytpl = layui.laytpl;
+    var form = layui.form;
 
     var ajax = layui.ajax;
     var API = layui.configAPI;
@@ -24,52 +25,8 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
         },
     }
 
-    var myChart = echarts.init(document.getElementById('main'));
-    
-    option = {
-        title: {      //标题组件
-          // text: '销售额（万元）'
-        },
-        tooltip: {    //提示框组件
-          trigger: 'axis'
-        },
-        legend: {     //图例组件
-          data: ['邮件营销']
-        },
-        grid: {  //直角坐标系内绘图网格
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: {  //直角坐标系 grid 中的 x 轴
-          type: 'category',
-          boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日','周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        },
-        yAxis: {  //直角坐标系 grid 中的 y 轴
-          type: 'value'
-        },
-        series: [  //系列列表
-          {
-            name: '销售额',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210]
-          }
-        ]
-    };
-    myChart.setOption(option);
-
     function bindEvent(){
       var eventsObj = {
-        test: function(){
-          layer.open({
-            content: '没有更多了',
-            style: 'background-color:rgba(0,0,0,.7); color:#fff; border:none;',
-            
-          });
-        },
         toOrderList: function(){
           var orderStatus = $(this).data("status");
           LS.set("orderStatus", orderStatus);
@@ -87,7 +44,7 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
               ,yes: function(index, layero){
                 //按钮【按钮一】的回调
                 console.log(layero)
-                $(".layui-layer-dialog, .layui-layer-shade").hide();
+                $("#layui-layer1, #layui-layer-shade1").hide();
               }
               ,cancel: function(){ 
                 //右上角关闭回调
@@ -95,13 +52,44 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
                 //return false 开启该代码可禁止点击该按钮关闭
               }
           });
+        },
+        deleteTicket: function(){
+          var that = this;
+          layer.open({
+            title: ''
+              ,content: '您确定要删除该票源吗？'
+              ,btn: ['确认', '取消']
+              ,yes: function(index, layero){
+                //按钮【按钮一】的回调
+                $(that).closest("div.layui-colla-item").remove();
+                $(".layui-layer-dialog, .layui-layer-shade").hide();
+                var layuiCollaItems = $("div.layui-colla-item");
+                for (var i = 0; i < layuiCollaItems.length; i++) {
+                  $(layuiCollaItems[i]).find("span.index").text(i);
+                }
+              }
+              ,cancel: function(){ 
+                //右上角关闭回调
+              
+                //return false 开启该代码可禁止点击该按钮关闭
+              }
+          });
+        },
+        addOriginTicket: function(){
+          var html = $("div.layui-colla-item:first").clone(true);
+          $("div.layui-collapse").append(html);
+          $("div.layui-colla-item:last").find("span.index").text($("div.layui-colla-item").length-1);
+        },
+        publishTicket: function(){
+          LS.set("ticketStatus", 0);
+          location.href = "ticketsAll.html";
         }
       };
       E('body', eventsObj);
     }
 
     function init(){
-
+      $(".nav_left li:eq(1)").addClass("layui-nav-itemed").end().find("dd.programs").addClass("layui-this");
       ajax(obj);
       bindEvent();
     }
