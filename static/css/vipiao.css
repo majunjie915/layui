@@ -46,8 +46,8 @@
 .forgotPwd .layui-input{ display: inline; width: 340px; margin-left: 30px;}
 .forgotPwd .layui-form-item:nth-of-type(3) .layui-input{ width: 234px;}
 .forgotPwd .layui-input-inline{ width: 100%; }
-.forgotPwd .layui-btn-primary{ margin-left: -5px; margin-top: -2px; }
-.forgotPwd .layui-btn-disabled{ margin-left: -5px; margin-top: -2px; }
+.forgotPwd .layui-btn-primary{ margin-left: -5px; margin-top: -2.5px; }
+.forgotPwd .layui-btn-disabled{ margin-left: -5px; margin-top: -2.5px; }
 
 /*商户规则*/
 .businessRules_seconedTitle{font-size: 18px;}
