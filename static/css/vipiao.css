@@ -27,8 +27,8 @@
 .login{ padding: 10px; background: #f7f7f7;}
 .login .kefu{ position: absolute; top: 30px; right: 25px; }
 .login .layui-breadcrumb a{ display: inline-block; margin-top: 10px; }
-.login .container{height: 80%; background: #fff; margin: 20px; border: solid 1px #ccc;}
-.login .container .layui-form{border: solid 1px #ccc; width: 400px;margin: 15% auto;}
+.login .container{padding-top: 50px;/* background: #fff; margin: 20px; border: solid 1px #ccc;*/}
+.login .container .layui-form{border: solid 1px #ccc; width: 400px;margin: 0 auto;}
 .login .layui-input{ width: 260px; }
 .login .layui-form-item:first-of-type{ 
 	background: #eee; line-height: 40px;
