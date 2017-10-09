@@ -12,6 +12,7 @@
 	padding-left: 45px;
 }
 .blank30{clear: both;height: 30px;overflow: hidden;display: block;}
+.blank70{clear: both;height: 70px;overflow: hidden;display: block;}
 
 .custom_nav{height: 60px; line-height: 60px;margin: 0 20px;border-bottom: solid 2px #ccc;}
 .custom_nav li{float: left;width: 70px;cursor: pointer;text-align: center;}
@@ -20,6 +21,33 @@
 .postTicBtn{float: right;margin-top: 10px;}
 
 .layui-layout-admin .layui-footer{font-size: 12px; line-height: 20px; text-align: center; height: 50px; padding-top: 10px;}
+
+
+/*登录页*/
+.login{ padding: 10px; background: #f7f7f7;}
+.login .kefu{ position: absolute; top: 30px; right: 25px; }
+.login .layui-breadcrumb a{ display: inline-block; margin-top: 10px; }
+.login .container{height: 80%; background: #fff; margin: 20px; border: solid 1px #ccc;}
+.login .container .layui-form{border: solid 1px #ccc; width: 400px;margin: 15% auto;}
+.login .layui-input{ width: 260px; }
+.login .layui-form-item:first-of-type{ 
+	background: #eee; line-height: 40px;
+	padding-left: 20px; font-size: 17px;
+}
+.login .forgetPassword{ text-align: right; margin-right: 30px; margin-bottom: 0; }
+.login .loginBtn{ text-align: center; margin: 40px 0; }
+.login .loginBtn p{ width: 120px; }
+.login .layui-footer{ 
+	left: 0; bottom: 20px; background: #f7f7f7; margin-bottom: 20px;
+	border-top: solid 1px #999; margin: 0 10px; padding-top: 15px; 
+	line-height: 24px;
+}
+
+.forgotPwd .layui-input{ display: inline; width: 340px; margin-left: 30px;}
+.forgotPwd .layui-form-item:nth-of-type(3) .layui-input{ width: 234px;}
+.forgotPwd .layui-input-inline{ width: 100%; }
+.forgotPwd .layui-btn-primary{ margin-left: -5px; margin-top: -2px; }
+.forgotPwd .layui-btn-disabled{ margin-left: -5px; margin-top: -2px; }
 
 /*商户规则*/
 .businessRules_seconedTitle{font-size: 18px;}
@@ -78,6 +106,7 @@
 	margin-top: 30px;
 	cursor: pointer;
 }
+.index_middle_content>li{font-size: 26px;}
 .index_bottom_content li:nth-of-type(2){
 	background: #b3c2be;
 	margin: 0 3%;
@@ -91,7 +120,7 @@
 	margin-top: 30px;
 }
 .index_middle_content li:nth-of-type(3){background: #bdbdbd;}
-.index_bottom_content li p{margin: 20px;}
+.index_bottom_content li p{margin: 20px; font-size: 16px;}
 .index_bottom_content li h3{
 	font-size: 35px;
 	text-align: center;
@@ -220,3 +249,30 @@
 	margin-right: 10px;
 }
 .publishTicket{padding: 0 30px; margin-left: 45%; margin-top: 20px; margin-bottom: 30px;}
+
+/*通知栏详情页面*/
+.noticeInfo{margin: 20px;}
+.noticeInfo .top p:first-of-type{font-size: 18px;}
+.noticeInfo .top p:last-of-type{padding: 10px 0 20px 7px; border-bottom: solid 1px #ccc; font-size: 12px;}
+.noticeInfo .bottom p{padding: 10px 0 10px 7px;}
+
+/*通知列表页*/
+.noticeList .top p:first-of-type{font-size: 18px;}
+.noticeList ul{ 
+	margin: 10px 50px 0 20px; line-height: 40px;
+	font-size: 14px;
+}
+.noticeList ul li{border-bottom: dotted 1px #ccc;}
+.noticeList ul li span{ float: right; }
+
+/*发货页*/
+.sendGoods section {
+	width: 40%;margin-top: 3%;
+	margin-left: 30%;border: solid 1px #eee;
+	padding: 15px; padding-right: 50px;position: relative;
+}
+.sendGoods form .sendGoods_tips{margin-left: 40px; color: red; margin-bottom: 20px;}
+.sendGoods form .layui-form-item{
+	margin-top: 10px;
+}
+.sendGoods section .btns{margin-left: 40px;}

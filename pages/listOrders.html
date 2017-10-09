@@ -188,8 +188,21 @@
         <td>测试、18310246630、北京市-北京市-海淀区-唯票</td>
         <td>快递：0.00元</td>
         <td></td>
-        <td>待发货</td>
-        <td><a href=""><button class="layui-btn layui-btn-mini layui-btn-primary">发货</button></a></td>
+        <td>
+          {{# if(item.status === "1"){ }}
+            待确认
+          {{# }else if(item.status === "2"){ }}
+            待发货
+          {{# } }}
+        </td>
+        <td>
+          {{# if(item.status === "1"){ }}
+            <a href="javascript:;"><button class="layui-btn layui-btn-mini layui-btn-primary" data-action="confirmOrder">确认订单</button>
+          {{# } else if(item.status === "2"){ }}
+            <a href="sendGoods.html"><button class="layui-btn layui-btn-mini layui-btn-primary">发货</button>
+            <a href="javascript:;"><button class="layui-btn layui-btn-mini layui-btn-primary" data-action="cancelConfirm">取消确认</button>
+          {{# } }}
+        </a></td>
       </tr>
     {{# }); }}
     {{# if(d.list.length === 0){ }}

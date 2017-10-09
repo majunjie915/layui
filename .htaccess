@@ -8,7 +8,7 @@
 
 
 	RewriteCond %{HTTP_HOST} majunjie-vendor.com
-	RewriteRule ^\/?$ /dist/vipiao.html [L]
+	RewriteRule ^\/?$ /dist/login.html [L]
 
 	
 </IfModule>

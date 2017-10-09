@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>唯票商家后台管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">  
+    <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../static/css/vipiao.css"  media="all">
+    <!-- 让IE8/9支持媒体查询 -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../lib/layui/layui.js" charset="utf-8"></script>
+	<script src="../static/js/global.js" charset="utf-8"></script>
+</head>
+<body class="layui-layout-vipiao layui-layout login forgotPwd">
+	<div class="layui-header" style="border-bottom: solid 1px #999;">		
+		<span class="layui-breadcrumb" lay-separator="|">
+	    	<a><img src="../static/images/logo.png" alt=""></a>
+	    	<a><cite>商家版</cite></a>
+		</span>
+	</div>
+	<div class="layui-body layui-layout-admin" style="left: 0;">
+		<p class="kefu">客服电话：400-030-9755</p>
+		<div class="blank70"></div>
+		<div class="container">
+			<form class="layui-form">
+				<div class="layui-form-item">忘记密码</div>
+				<div class="layui-form-item">
+					<div class="layui-input-inline">						
+						<input type="text" name="mobile" class="layui-input" placeholder="请输入手机号">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-inline">
+						<input type="text" name="verificationCode" class="layui-input" placeholder="验证码">
+						<p class="layui-btn layui-btn-primary getBtn" data-action="getVerificationCode">获取验证码</p>
+						<p class="layui-btn layui-btn-disabled countDown" style="width: 108px;display: none;"><span>59</span>(s)</p>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-inline">
+						<input type="password" name="newPassword" class="layui-input" placeholder="请输入新密码">
+					</div>
+				</div>
+				<div class="layui-form-item loginBtn">
+					<p class="layui-btn" data-action="save" style="width: 200px;">
+					保存</p>
+				</div>
+			</form>
+		</div>
+		<div class="layui-footer">
+	    	<!-- 底部固定区域 -->
+		    <p>京ICP备15008001号-1 京公网安备11010102000024号</p>
+		    <p>北京盈拓文化传媒有限公司 CopyRight © 2014-2017 All Rights Reserved</p>
+	    </div>
+	</div>
+
+	<script type="text/javascript" src="../static/js/pages/login.js"></script>
+</body>
+</html>

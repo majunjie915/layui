@@ -25,7 +25,8 @@ layui.use(['element', 'laypage', 'laydate', 'form', 'laytpl',  'jquery', 'layer'
           "title": "测试节目0815",
           "show_time": "2017-08-26 10:47:22",
           "cities": "呼和浩特市",
-          "ticket_price": "100.00"
+          "ticket_price": "100.00",
+          "status": "1"
         },
         {
           "id": "15027821376677502",
@@ -33,7 +34,8 @@ layui.use(['element', 'laypage', 'laydate', 'form', 'laytpl',  'jquery', 'layer'
           "title": "北京测试预定",
           "show_time": "2017-08-17 16:46:31",
           "cities": "北京市",
-          "ticket_price": "200.00"
+          "ticket_price": "200.00",
+          "status": "2"
         }
       ]
     };
@@ -57,6 +59,30 @@ layui.use(['element', 'laypage', 'laydate', 'form', 'laytpl',  'jquery', 'layer'
               $(forms[i]).css("display", "block");
             }
           }
+        },
+        confirmOrder: function(){
+          layer.open({
+            title: "确认订单",
+            content: "<p>您确定可为该用户提供票品吗？</p>",
+            btn: ["确认订单", "取消"],
+            yes: function(index, layero){
+              $(".layui-layer-dialog, .layui-layer-shade").hide();
+              LS.set("orderStatus", 2);
+              location.reload();
+            }
+          })
+        },
+        cancelConfirm: function(){
+          layer.open({
+            title: "取消确认",
+            content: "<p>您确定要取消订单吗？</p><span style='font-size:12px;color:red;'>(扣除费用：30元)</span>",
+            btn: ["取消订单"],
+            yes: function(index, layero){
+              $(".layui-layer-dialog, .layui-layer-shade").hide();
+              LS.set("orderStatus", 3);
+              location.reload();
+            }
+          })
         }
       };
       E("body", eventsObj);

@@ -63,13 +63,6 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
 
     function bindEvent(){
       var eventsObj = {
-        test: function(){
-          layer.open({
-            content: '没有更多了',
-            style: 'background-color:rgba(0,0,0,.7); color:#fff; border:none;',
-            
-          });
-        },
         toOrderList: function(){
           var orderStatus = $(this).data("status");
           LS.set("orderStatus", orderStatus);

@@ -1,0 +1,103 @@
+@@include("./tmpl/header.txt")
+  <div class="layui-body">
+    <p class="personalInfo_nav">      
+      <span class="layui-breadcrumb">
+        <a href="vipiao.html">首页</a>
+        <a href="programs.html">项目管理</a>
+        <a href="programs.html">票品管理</a>
+        <a><cite>周杰伦2017地表最强世界巡回演出会</cite></a>
+      </span>
+    </p>
+    <!-- 内容主体区域 -->
+    <div style="margin: 20px;" class="programs_list">
+        <section class="addTickets_form addTickets_ticketInfo">
+          <div class="addTickets_form_title">
+            <pp>场次：<span>2017.07.28 19:30 周五 &nbsp;|&nbsp; </span><span>北京 &nbsp;|&nbsp; </span><span>鸟巢体育馆</span></p>
+          </div>
+          <div class="layui-colla-item">
+            <div class="layui-colla-content layui-show">
+              <form class="" action="">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">票档</label>
+                  <div>
+                    <input type="radio" name="ticketGrade" value=""> 150 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 250 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 450 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 550
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">选择区域</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="area" value="" title="1区"> 1区 &nbsp;
+                    <input type="radio" name="area" value="" title="2区"> 2区 &nbsp;
+                    <input type="radio" name="area" value="" title="看台"> 看台 &nbsp;
+                    <input type="radio" name="area" value="" title="内场"> 内场
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">座位描述</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="descript" required="" lay-verify="required" placeholder="座位描述，限10个文字" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">票价/张</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="ticketPrice" required="" lay-verify="required" placeholder="请输入票品出售的价格" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">数量</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="ticketNum" required="" lay-verify="required" placeholder="请输入库存数量" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">连座描述</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="doubleSeat" value="" title="无"> 无 &nbsp;
+                    <input type="radio" name="doubleSeat" value="" title="连座"> 连座 &nbsp;
+                    <input type="radio" name="doubleSeat" value="" title="两连座"> 两连座
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">配送方式</label>
+                  <div class="layui-input-block">
+                    <input type="checkbox" name="siteWay" title="现场取票"> 现场取票 &nbsp;
+                    <input type="checkbox" name="expressWay" title="快递"> 快递
+                    <input type="text" name="expressFee" required="" lay-verify="required" placeholder="快递费" class="layui-input expressFee">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">特殊标签说明</label>
+                  <div class="layui-input-block">
+                    <input type="checkbox" name="tags_baoyou" title="包邮"> 包邮 &nbsp;
+                    <input type="checkbox" name="tags_toPay" title="邮费到付"> 邮费到付 &nbsp;
+                    <input type="checkbox" name="tags_noRetuen" title="不予退还"> 不予退还
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">全款预订</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="preSell" value="" title="否"> 否 &nbsp;
+                    <input type="radio" name="preSell" value="" title="是"> 是 
+                  </div>
+                </div><div class="layui-form-item">
+                  <label class="layui-form-label">限购</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="limitBuy" value="" title="否"> 否 &nbsp;
+                    <input type="radio" name="limitBuy" value="" title="是"> 是
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button class="layui-btn publishTicket" data-action="saveModify">保存</button>
+        </section>
+    </div>
+  </div>
+
+ @@include("./tmpl/footer.txt",{"pagejs":""})
+ @@include("./tmpl/footer-script.txt",{"pagejs":""})
+<script type="text/javascript" src="../static/js/pages/modifyTicketInfo.js"></script>

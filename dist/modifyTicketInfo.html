@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>唯票商家后台管理系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">  
+  <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+  <link rel="stylesheet" href="../static/css/vipiao.css"  media="all">
+  <!-- 让IE8/9支持媒体查询 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="layui-layout layui-layout-admin layui-layout-vipiao">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="../static/images/logo.png" alt=""></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <!-- <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="vipiao.html">首页</a></li>
+      <li class="layui-nav-item"><a href="">用户管理</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">系统管理</a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">账户信息</a></dd>
+          <dd><a href="">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">使用手册</a></li>
+    </ul> -->
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          唯票
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="personalInfo.html">账户信息</a></dd>
+          <dd><a href="changePassword.html">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">注销</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black" style="width:16%;">
+    <div class="layui-side-scroll" style="width:100%;">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree nav_left"  lay-filter="test"  style="width:100%;">
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;"><img src="../static/images/merchant.png" style="width: 14px;height: 16px;margin-right: 6px" />商户中心</a>
+          <dl class="layui-nav-child">
+            <dd class="vipiao"><a href="vipiao.html">店铺概览</a></dd>
+            <dd class="myWallet"><a href="myWallet.html">我的钱包</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/project.png" style="width: 14px;height: 16px;margin-right: 6px" />项目管理</a>
+          <dl class="layui-nav-child">
+            <dd class="programs"><a href="programs.html">发布票源</a></dd>
+            <dd class="ticketsAll"><a href="ticketsAll.html">票品管理</a></dd>
+            <dd class="listOrders"><a href="listOrders.html">订单管理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />营销中心</a>
+          <dl class="layui-nav-child">
+            <dd class="discount"><a href="discount.html">打折促销</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/systemManage.png" style="width: 16px;height: 18px;margin-right: 6px" />系统管理</a>
+          <dl class="layui-nav-child">
+            <dd class="personalInfo"><a href="personalInfo.html">账户信息</a></dd>
+            <dd class="changePassword"><a href="changePassword.html">修改密码</a></dd>
+          </dl>
+        </li>
+	<li class="layui-nav-item">
+          <a href="javascript:;"><img src="../static/images/activityIcon.png" style="width: 16px;height: 18px;margin-right: 6px" />商户规则</a>
+          <dl class="layui-nav-child">
+            <dd class="businessRules"><a href="businessRules.html">商户规则</a></dd>
+          </dl>
+        </li>
+        <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <p class="personalInfo_nav">      
+      <span class="layui-breadcrumb">
+        <a href="vipiao.html">首页</a>
+        <a href="programs.html">项目管理</a>
+        <a href="programs.html">票品管理</a>
+        <a><cite>周杰伦2017地表最强世界巡回演出会</cite></a>
+      </span>
+    </p>
+    <!-- 内容主体区域 -->
+    <div style="margin: 20px;" class="programs_list">
+        <section class="addTickets_form addTickets_ticketInfo">
+          <div class="addTickets_form_title">
+            <pp>场次：<span>2017.07.28 19:30 周五 &nbsp;|&nbsp; </span><span>北京 &nbsp;|&nbsp; </span><span>鸟巢体育馆</span></p>
+          </div>
+          <div class="layui-colla-item">
+            <div class="layui-colla-content layui-show">
+              <form class="" action="">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">票档</label>
+                  <div>
+                    <input type="radio" name="ticketGrade" value=""> 150 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 250 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 450 &nbsp;
+                    <input type="radio" name="ticketGrade" value=""> 550
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">选择区域</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="area" value="" title="1区"> 1区 &nbsp;
+                    <input type="radio" name="area" value="" title="2区"> 2区 &nbsp;
+                    <input type="radio" name="area" value="" title="看台"> 看台 &nbsp;
+                    <input type="radio" name="area" value="" title="内场"> 内场
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">座位描述</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="descript" required="" lay-verify="required" placeholder="座位描述，限10个文字" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">票价/张</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="ticketPrice" required="" lay-verify="required" placeholder="请输入票品出售的价格" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">数量</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="ticketNum" required="" lay-verify="required" placeholder="请输入库存数量" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">连座描述</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="doubleSeat" value="" title="无"> 无 &nbsp;
+                    <input type="radio" name="doubleSeat" value="" title="连座"> 连座 &nbsp;
+                    <input type="radio" name="doubleSeat" value="" title="两连座"> 两连座
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">配送方式</label>
+                  <div class="layui-input-block">
+                    <input type="checkbox" name="siteWay" title="现场取票"> 现场取票 &nbsp;
+                    <input type="checkbox" name="expressWay" title="快递"> 快递
+                    <input type="text" name="expressFee" required="" lay-verify="required" placeholder="快递费" class="layui-input expressFee">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">特殊标签说明</label>
+                  <div class="layui-input-block">
+                    <input type="checkbox" name="tags_baoyou" title="包邮"> 包邮 &nbsp;
+                    <input type="checkbox" name="tags_toPay" title="邮费到付"> 邮费到付 &nbsp;
+                    <input type="checkbox" name="tags_noRetuen" title="不予退还"> 不予退还
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">全款预订</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="preSell" value="" title="否"> 否 &nbsp;
+                    <input type="radio" name="preSell" value="" title="是"> 是 
+                  </div>
+                </div><div class="layui-form-item">
+                  <label class="layui-form-label">限购</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="limitBuy" value="" title="否"> 否 &nbsp;
+                    <input type="radio" name="limitBuy" value="" title="是"> 是
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button class="layui-btn publishTicket" data-action="saveModify">保存</button>
+        </section>
+    </div>
+  </div>
+
+   <div class="layui-footer" style="left:16%;">
+    <!-- 底部固定区域 -->
+    <p>京ICP备15008001号-1 京公网安备11010102000024号</p>
+    <p>北京盈拓文化传媒有限公司 CopyRight © 2014-2017 All Rights Reserved</p>
+  </div>
+</div>
+</body>
+</html>
+ <script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script src="../static/js/global.js" charset="utf-8"></script>
+<script>
+layui.use(['element', 'jquery'], function(){
+	var element = layui.element;
+	var $ = layui.jquery;
+	var alldds = $(".nav_left li dd");
+	var cur_nav_left_dd = location.pathname.split("/")[1].split(".")[0]+" layui-this";
+	
+	if(cur_nav_left_dd==" layui-this"){
+		$(alldds[0]).addClass("layui-this").closest("li").addClass("layui-nav-itemed");
+	}else{
+		for(var i = 0; i < alldds.length; i++){
+			$(alldds[i]).removeClass("layui-this");
+			if(cur_nav_left_dd.indexOf($(alldds[i]).attr("class"))>-1){
+				$(alldds[i]).attr("class", cur_nav_left_dd).closest("li").addClass("layui-nav-itemed");
+			}
+		}
+	}
+		 
+});
+</script>
+
+<script type="text/javascript" src="../static/js/pages/modifyTicketInfo.js"></script>

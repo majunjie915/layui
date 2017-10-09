@@ -92,113 +92,22 @@
       </ul>
     </div>
   </div>
-<script type="text/javascript" src="../lib/echarts.min.js"></script>
-  <div class="layui-body layui-tab-card">
-    <ul class="layui-tab-title" id="admin-tab">
-        <li class="layui-this">
-            <i class="layui-icon" style="top: 2px; font-size: 16px;"></i>
-            <cite>后台管理</cite>
-        </li>
-    </ul>
+<div class="layui-body">
     <!-- 内容主体区域 -->
-    <div class="index_container">
-      <div class="index_left">        
-        <section class="index_top">
-          <div>          
-            <img src="../static/images/header.png" class="index_top_headerImg">
-            <ul>
-              <li>小唯&nbsp;13788888888</li>
-              <li><img src="../static/images/official.png" class="index_top_official">官方认证</li>
-            </ul>
-           <!--  <a href=""><button class="layui-btn layui-btn-danger layui-btn-big index_top_btn">我要发布票源</button></a> -->
-          </div>
-          <p>
-            账户余额：<span class="index_top_balance">￥1959.00</span>
-            <span class="layui-breadcrumb index_top_changeInfo" lay-separator="|">
-              <a href="javascript:;" data-action="withDraw">提现</a>
-              <a href="myWallet.html">收支明细</a>
-            </span>
-          </p>
-        </section>
-        <div class="blank30"></div>
-        <section class="index_bottom">
-          <p class="index_bottom_title">待办事项</p>
-          <ul class="index_bottom_content">
-            <li data-action="toOrderList" data-status="1">
-              <p>待确认订单：</p>
-              <h3>6</h3>
-            </li>
-            <li data-action="toOrderList" data-status="2">
-              <p>待发货订单：</p>
-              <h3>8</h3>
-            </li>
-            <li data-action="toOrderList" data-status="0">
-              <p>库存不足：</p>
-              <h3>6</h3>
-            </li>
-          </ul>
-          <div class="blank30"></div>
-        </section>
-        <div class="blank30"></div>
-        <section class="index_middle">
-          <p class="index_bottom_title">营销工具</p>
-          <ul class="index_middle_content">
-            <li>
-              <a href="discount.html"><p>打折促销</p></a>
-            </li>
-            <li>
-              <p>套餐组合</p>
-            </li>
-            <li>
-              <p>付费广告</p>
-            </li>
-          </ul>
-          <div class="blank30"></div>
-        </section>
-      </div>
-      <div class="index_right">
-        <div class="index_notice">
-          <h3>通知栏<a href="noticeList.html"><span>更多></span></a></h3>
-          <ul>
-            <li><a href="noticeInfo.html">【新增演出】7.13北京新增演出<span>07-13</span></a></li>
-            <li><a href="noticeInfo.html">【公告】新上线打折促销功能<span>07-10</span></a></li>
-            <li><a href="noticeInfo.html">【提现说明】商家提现规则须知<span>07-18</span></a></li>
-            <li><a href="noticeInfo.html">【新增演出】7.19上海新增演出<span>07-19</span></a></li>
-          </ul>
-        </div>
-        <div class="blank30"></div>
-        <div class="salesInfo">
-          <ul>
-            <li>
-              <p>总销售额</p>
-              <h3>￥34567</h3>
-            </li>
-            <li>
-              <p>总订单量</p>
-              <h3>66单</h3>
-            </li>
-          </ul>
-        </div>
-        <div class="blank30"></div>
-        <div class="index_notice">         
-          <ul class="orderWay">
-            <li class="choosed">销售额</li>
-            <li>订单数</li>
-          </ul>        
-          <ul class="summaryCycle">
-            <li>汇总周期：</li>
-            <li class="choosed">日</li>
-            <li>月</li>
-            <li>年</li>
-          </ul>
-          <p class="unit">销售额（万元）</p>
-          <div id="main" style="width: 93%; height: 400px;">          
-          </div>
-        </div>
-      </div>
+    <div class="noticeInfo noticeList">
+    	<div class="top">
+    		<p>通知中心</p>
+    	</div>
+        <ul>
+            <li><a href="noticeInfo.html">【新增演出】7.13北京新增演出<span>2017-07-13</span></a></li>
+            <li><a href="noticeInfo.html">【公告】新上线打折促销功能<span>2017-07-10</span></a></li>
+            <li><a href="noticeInfo.html">【提现说明】商家提现规则须知<span>2017-07-08</span></a></li>
+            <li><a href="noticeInfo.html">【新增演出】7.19上海新增演出<span>2017-07-04</span></a></li>
+        </ul>
     </div>
-    <div class="blank30"></div>
-  </div>
+</div>
+
+
 <script src="../lib/layui/layui.js" charset="utf-8"></script>
 <script src="../static/js/global.js" charset="utf-8"></script>
 <script>
@@ -229,5 +138,5 @@ layui.use(['element', 'jquery'], function(){
   </div>
 </div>
 </body>
-</html> 
-<script type="text/javascript" src="../static/js/pages/index.js"></script> 
+</html>
+<script type="text/javascript" src="../static/js/pages/noticeInfo.js"></script>
