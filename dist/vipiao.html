@@ -39,14 +39,14 @@
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          唯票
+          唯票，欢迎你
         </a>
         <dl class="layui-nav-child">
           <dd><a href="personalInfo.html">账户信息</a></dd>
-          <dd><a href="changePassword.html">修改密码</a></dd>
+          <dd><a href="login.html">退出登录</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="">注销</a></li>
+      <li style="margin-left: 30px;position: relative;display: inline-block;vertical-align: middle;line-height: 60px;">客服电话：400-030-9755</li>
     </ul>
   </div>
   
@@ -180,18 +180,18 @@
           </ul>
         </div>
         <div class="blank30"></div>
-        <div class="index_notice">         
+        <div class="index_notice showFilter">         
           <ul class="orderWay">
-            <li class="choosed">销售额</li>
-            <li>订单数</li>
+            <li data-action="showByMoney" data-index="1">销售额</li>
+            <li data-action="showByNums" data-index="2">订单数</li>
           </ul>        
           <ul class="summaryCycle">
             <li>汇总周期：</li>
-            <li class="choosed">日</li>
-            <li>月</li>
-            <li>年</li>
+            <li data-action="byDay" data-date="day">日</li>
+            <li data-action="byMonth" data-date="month">月</li>
+            <li data-action="byYear" data-date="year">年</li>
           </ul>
-          <p class="unit">销售额（万元）</p>
+          <p class="unit"></p>
           <div id="main" style="width: 93%; height: 400px;">          
           </div>
         </div>

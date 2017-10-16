@@ -14,15 +14,18 @@ layui.use(['element', 'layer', 'jquery', 'laytpl', 'form',
     var customUtil = layui.customUtil;
     var params = customUtil.toQueryParams();
 
-    var obj = {
-        url: "../static/js/common/test.json",
-        type: "get",
-        data: "",
-        successFn: function(){
-          console.log(API.Common.getProvice.url);
-          console.log(params["a"]);
-          LS.set("message", "hello world");
-        },
+    function getTicketInfoData(){
+        var obj = {
+            url: "../static/js/common/test.json",
+            type: "get",
+            data: "",
+            successFn: function(){
+              console.log(API.Common.getProvice.url);
+              console.log(params["a"]);
+              LS.set("message", "hello world");
+            },
+        };
+        ajax(obj);
     }
 
     function bindEvent(){
@@ -66,7 +69,7 @@ layui.use(['element', 'layer', 'jquery', 'laytpl', 'form',
 
     function init(){
       $(".nav_left li:eq(1)").addClass("layui-nav-itemed").end().find("dd.ticketsAll").addClass("layui-this");
-      ajax(obj);
+      getTicketInfoData();
       bindEvent();
     }
 

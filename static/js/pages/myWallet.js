@@ -16,63 +16,20 @@ layui.use(['element', 'jquery', 'laytpl', 'laydate', 'laypage', 'layer', 'form',
 
 		params = customUtil.toQueryParams();
 
-		var data = {
-      		list: []
-    	};
-	    var getTpl = transactionListT.innerHTML;
-	    var view = document.getElementById('transactionList');
-	    laytpl(getTpl).render(data, function(html){
-	      // view.innerHTML = html;
-	    });
-
-		function bindEvent(){
-			var eventObj = {
-				withDraw: function(){
-					layer.open({
-						title: '提现到银行卡'
-					    ,content: '<p style="line-height: 2.5;">银行卡号： <span>6222 **** **** 4305</span></p>'+
-					  			'<p style="line-height: 2.5;">提现金额： '+
-					  			'<input type="text" style="width:100px;height:30px">  元'+
-					  			'</p>'+
-					  			'<p style="line-height: 2.5;">可提现金额： <span>2250</span></p>'
-					    ,btn: ['确认转出', '取消']
-					    ,yes: function(index, layero){
-					    	//按钮【按钮一】的回调
-					    	console.log(layero)
-                			$(".layui-layer-dialog, .layui-layer-shade").hide();
-					    }
-					    ,cancel: function(){ 
-					    	//右上角关闭回调
-					    
-					    	//return false 开启该代码可禁止点击该按钮关闭
-					    }
-					});
-				}
-			};
-
-			E("body", eventObj);
-		}
-
-		function init(){
-
-			//时间插件
-		    laydate.render({ 
-		        elem: '#datePluginStart'
+    	function getData(){
+			var data = {
+	      		list: []
+	    	};
+		    var getTpl = transactionListT.innerHTML;
+		    var view = document.getElementById('transactionList');
+		    laytpl(getTpl).render(data, function(html){
+		      view.innerHTML = html;
 		    });
-		    laydate.render({ 
-		        elem: '#datePluginEnd'
-		    });
-		    // 提交表单,获取表单信息
-		    form.on('submit(formDemo)', function(data){
-		      	formData = data.field;
-		      	console.log(formData);
-		      	return false;
-		    });
-			// 分页插件
+		    // 分页插件		    	
 		    laypage.render({
 		        elem: 'pages', //注意，这里的 pages 是 ID，不用加 # 号
-		        count: 50, //数据总数，从服务端得到
-		        limit: 5,// 自定义每页条数，默认为10
+		        count: data.list.length, //数据总数，从服务端得到
+		        limit: 10,// 自定义每页条数，默认为10
 		        layout: ['count', 'prev', 'page', 'next', 'skip'],// 除了每页显示多少条的限制limit外，全部显示
 		        curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
 		            var page = location.search.match(/page=(\d+)/);
@@ -92,6 +49,56 @@ layui.use(['element', 'jquery', 'laytpl', 'laydate', 'laypage', 'layer', 'form',
 		            }
 		        }
 		    });
+    	}
+
+		function bindEvent(){
+			var eventObj = {
+				withDraw: function(){
+					var str = '<p style="line-height: 2.5;">银行卡号： <span>6222 **** **** 4305</span></p>'+
+					  			'<p style="line-height: 2.5;">提现金额： '+
+					  			'<input type="text" style="width:100px;height:30px">  元'+
+					  			'</p>'+
+					  			'<p style="line-height: 2.5;">可提现金额： <span>2250</span></p>';
+					layer.open({
+						title: '提现到银行卡'
+					    ,content: str
+					    ,btn: ['确认转出', '取消']
+					    ,yes: function(index, layero){
+					    	//按钮【按钮一】的回调
+					    	console.log(layero)
+                			$(".layui-layer-dialog, .layui-layer-shade").hide();
+					    }
+					    ,cancel: function(){ 
+					    	//右上角关闭回调
+					    
+					    	//return false 开启该代码可禁止点击该按钮关闭
+					    }
+					});
+				}
+			};
+
+			E("body", eventObj);
+		}
+
+		function pluginRender(){
+			//时间插件
+		    laydate.render({ 
+		        elem: '#datePluginStart'
+		    });
+		    laydate.render({ 
+		        elem: '#datePluginEnd'
+		    });
+		    // 提交表单,获取表单信息
+		    form.on('submit(formDemo)', function(data){
+		      	formData = data.field;
+		      	console.log(formData);
+		      	return false;
+		    });
+						
+		}
+		function init(){
+			pluginRender();
+			getData();
 			bindEvent();
 		}
 

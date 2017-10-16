@@ -13,9 +13,6 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
     var customUtil = layui.customUtil;
     var params = customUtil.toQueryParams();
 
-
-
-
 	function init(){
 		$(".nav_left li:eq(0)").addClass("layui-nav-itemed").end().find("dd.vipiao").addClass("layui-this");
 	}

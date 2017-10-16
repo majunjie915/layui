@@ -87,18 +87,18 @@
           </ul>
         </div>
         <div class="blank30"></div>
-        <div class="index_notice">         
+        <div class="index_notice showFilter">         
           <ul class="orderWay">
-            <li class="choosed">销售额</li>
-            <li>订单数</li>
+            <li data-action="showByMoney" data-index="1">销售额</li>
+            <li data-action="showByNums" data-index="2">订单数</li>
           </ul>        
           <ul class="summaryCycle">
             <li>汇总周期：</li>
-            <li class="choosed">日</li>
-            <li>月</li>
-            <li>年</li>
+            <li data-action="byDay" data-date="day">日</li>
+            <li data-action="byMonth" data-date="month">月</li>
+            <li data-action="byYear" data-date="year">年</li>
           </ul>
-          <p class="unit">销售额（万元）</p>
+          <p class="unit"></p>
           <div id="main" style="width: 93%; height: 400px;">          
           </div>
         </div>

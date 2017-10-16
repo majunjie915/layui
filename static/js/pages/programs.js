@@ -16,60 +16,47 @@ layui.use(['element', 'laypage', 'laytpl', 'jquery', 'form', 'layer', 'laydate',
 
       params = customUtil.toQueryParams();
 
-  var data = {
-    "total": "4",
-    "list": [
-        {
-            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
-            "show_time": "2017.08.25 - 2017.12.20",
-            "all_scence": "上海/天津/北京",
-            "img": "http://img4.imgtn.bdimg.com/it/u=1235202486,955959316&fm=200&gp=0.jpg"
-        },
-        {
-            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
-            "show_time": "2017.08.25 - 2017.12.20",
-            "all_scence": "上海/天津/北京",
-            "img": "http://img0.imgtn.bdimg.com/it/u=1974427947,3931742233&fm=27&gp=0.jpg"
-        },
-        {
-            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
-            "show_time": "2017.08.25 - 2017.12.20",
-            "all_scence": "上海/天津/北京",
-            "img": "http://img5.imgtn.bdimg.com/it/u=622933360,3059006293&fm=27&gp=0.jpg"
-        },
-        {
-            "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
-            "show_time": "2017.08.25 - 2017.12.20",
-            "all_scence": "上海/天津/北京",
-            "img": "http://img0.imgtn.bdimg.com/it/u=967033261,2403729305&fm=200&gp=0.jpg"
-        }
-    ]
-  };
-  var tpl = programsT.innerHTML;
-  var view = document.getElementById("programs");
-  laytpl(tpl).render(data, function(html){
-    view.innerHTML = html;
-  });
 
-  function bindEvent(){
-    var eventObj = {
-
+  function getprogramsList(){
+    var data = {
+      "total": "20",
+      "list": [
+          {
+              "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+              "show_time": "2017.08.25 - 2017.12.20",
+              "all_scence": "上海/天津/北京",
+              "img": "http://img4.imgtn.bdimg.com/it/u=1235202486,955959316&fm=200&gp=0.jpg"
+          },
+          {
+              "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+              "show_time": "2017.08.25 - 2017.12.20",
+              "all_scence": "上海/天津/北京",
+              "img": "http://img0.imgtn.bdimg.com/it/u=967033261,2403729305&fm=200&gp=0.jpg"
+          },
+          {
+              "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+              "show_time": "2017.08.25 - 2017.12.20",
+              "all_scence": "上海/天津/北京",
+              "img": "http://img4.imgtn.bdimg.com/it/u=1235202486,955959316&fm=200&gp=0.jpg"
+          },
+          {
+              "title": "“哈尔的移动城堡”宫崎骏·久石让动漫视听系列主题音乐会",
+              "show_time": "2017.08.25 - 2017.12.20",
+              "all_scence": "上海/天津/北京",
+              "img": "http://img0.imgtn.bdimg.com/it/u=967033261,2403729305&fm=200&gp=0.jpg"
+          }
+      ]
     };
-    E('body', eventObj);
-  }
-
-  function init(){
-
-    // 获取form数据
-    form.on('submit(formDemo)', function(data){
-      console.log(data.field);
-      return false;
-    })
+    var tpl = programsT.innerHTML;
+    var view = document.getElementById("programs");
+    laytpl(tpl).render(data, function(html){
+      view.innerHTML = html;
+    });
     // 分页
     laypage.render({
-      elem: 'test1', //注意，这里的 test1 是 ID，不用加 # 号
-      count: 50, //数据总数，从服务端得到
-      limit: 5,
+      elem: 'pages', //注意，这里的 pages 是 ID，不用加 # 号
+      count: data.total, //数据总数，从服务端得到
+      limit: 10,
       layout: ['count', 'prev', 'page', 'next', 'skip'],
       curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
           var page = location.search.match(/page=(\d+)/);
@@ -89,7 +76,26 @@ layui.use(['element', 'laypage', 'laytpl', 'jquery', 'form', 'layer', 'laydate',
           }
       }
     });
+  }
 
+  function bindEvent(){
+    var eventObj = {
+
+    };
+    E('body', eventObj);
+  }
+
+  function defaults(){
+      // 获取form数据
+      form.on('submit(formDemo)', function(data){
+        console.log(data.field);
+        return false;
+      })
+    
+  }
+  function init(){
+    defaults();
+    getprogramsList();
     bindEvent();
   }
 

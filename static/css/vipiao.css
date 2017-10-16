@@ -128,7 +128,8 @@
 }
 .index_middle_content li p{text-align: center; line-height: 155px;}
 
-.index_notice{padding: 15px;position: relative;}
+.index_notice{padding: 15px; position: relative;}
+.showFilter{ padding-right: 0; }
 .index_notice h3{font-size: 17px; font-weight: 700; height: 30px;border-bottom: solid 1px #aaa;}
 .index_notice h3 span{float: right; font-weight: 400; font-size: 14px;}
 .index_notice ul{margin-top: 10px;}
@@ -142,7 +143,7 @@
 .salesInfo li h3{font-size: 16px; font-weight: 600;margin-top: 10px;}
 .index_notice ul.orderWay{
 	position: absolute;left: 10px;top: 10px;
-	float:left;width: 44%;margin-top: 0;
+	float:left;width: 44%;margin-top: 0; z-index: 10;
 }
 .index_notice ul.orderWay li{
 	float: left; width: 40%;text-align: center;cursor: pointer;
@@ -150,7 +151,7 @@
 .index_notice ul.summaryCycle{
 	position: absolute; right: 10px;top: 10px;
 	float: right; width: 50%;
-	margin-top: 0;
+	margin-top: 0; z-index: 10;
 }
 .index_notice ul.summaryCycle li{
 	float: left; width: 16%;text-align: center;cursor: pointer;
