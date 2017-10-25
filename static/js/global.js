@@ -7,4 +7,5 @@ layui.config({
 	localStorage: 'localStorage',
 	customEvent: 'customEvent',
 	customDate: 'customDate',
+	Huploadify: 'Huploadify'
 });

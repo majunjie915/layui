@@ -1,5 +1,6 @@
 layui.use(['element', 'layer', 'jquery', 'laytpl',
-  'ajax', 'configAPI', 'customUtil', 'localStorage', 'customEvent', 'customDate'], function(){
+  'ajax', 'configAPI', 'customUtil', 'localStorage', 'customEvent', 
+  'customDate', 'Huploadify'], function(){
     var element = layui.element; 
     var layer = layui.layer;
     var $ = layui.jquery;
@@ -12,6 +13,53 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
     var formatDate = layui.customDate;
     var customUtil = layui.customUtil;
     var params = customUtil.toQueryParams();
+    var Huploadify = layui.Huploadify;
+
+    function editHeader() {
+        var up = $('#avatorUpload').Huploadify({
+            auto: true,
+            fileTypeExts: '*.jpg;*.jpeg;*.png;*.JPG;*.JPEG;*.PNG;',
+            multi: false,
+            fileObjName: 'upfile',
+            formData: {
+                '_vt': LS.get("_vt"),
+                'upload_dir':'upload/header'
+            },
+            fileSizeLimit: 99999999999,
+            showUploadedPercent: false,
+            showUploadedSize: false,
+            removeTimeout: 9999999,
+            uploader:"../static/js/common/test.json",
+            onUploadStart: function(file) {
+                console.log(file.name + '开始上传');
+            },
+            onInit: function(obj) {
+                // console.log('初始化');
+            },
+            onUploadComplete: function(file, res) {
+                //console.log(file.name + '上传完成');
+                var data = JSON.parse(res);
+                $("#avatorUpload").css("backgroundImage", "url('"+data.data[0].pic+"')");
+                // updateUser('userForm', data.data.header);
+
+            },
+            onCancel: function(file) {
+                console.log(file.name + '删除成功');
+            },
+            onClearQueue: function(queueItemCount) {
+                console.log('有' + queueItemCount + '个文件被删除了');
+            },
+            onDestroy: function() {
+                console.log('destroyed!');
+            },
+            onSelect: function(file) {
+                console.log(file.name + '加入上传队列');
+            },
+            onQueueComplete: function(queueData) {
+                console.log('队列中的文件全部上传完成', queueData);
+            }
+        });
+    }
 
     function getEchaersData(data){
       var obj = {
@@ -97,6 +145,11 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
           LS.set("orderStatus", orderStatus);
           location.href = "listOrders.html";
         },
+        toTicketsAll: function(){
+          var orderStatus = $(this).data("status");
+          LS.set("ticketStatus", orderStatus);
+          location.href = "ticketsAll.html";
+        },
         withDraw: function(){
           var str = '<p style="line-height: 2.5;">银行卡号： <span>6222 **** **** 4305</span></p>'+
                   '<p style="line-height: 2.5;">提现金额： '+
@@ -171,9 +224,13 @@ layui.use(['element', 'layer', 'jquery', 'laytpl',
     function init(){
       
       initStatisticChart();
-      var data = {};
+      var data = {
+        echartsStatus: LS.get("echartsStatus"),
+        date: LS.get("date")
+      };
       getEchaersData(data);
       bindEvent();
+      editHeader();
     }
 
     init();

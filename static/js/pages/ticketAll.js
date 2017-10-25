@@ -60,7 +60,19 @@ layui.use(['element', 'laypage', 'laydate', 'jquery', 'laytpl', 'layer', 'form',
         LS.set("ticketStatus", $(this).data("status"));
       },
       deleteTheTicket: function(){
-        $(this).closest("tr").remove();
+        var curTr = $(this).closest("tr");
+        layer.open({
+          title: "",
+          content: "确认删除此票品吗？",
+          btn: ["确定", "取消"],
+          yes: function(index, layero){
+            curTr.remove();
+            $(".layui-layer-dialog, .layui-layer-shade").hide();
+          },
+          cancle: function(){
+
+          }
+        })
       }
     };
     E("body", eventsObj);

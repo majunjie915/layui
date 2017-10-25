@@ -39,7 +39,7 @@ layui.use(['element', 'layer', 'jquery', 'laytpl', 'form',
           var that = this;
           layer.open({
             title: '票品编辑'
-              ,content: '您确定要修改该票源吗？'
+              ,content: '票品修改后，需重新提交审核，确<br/>认提交审核吗？'
               ,btn: ['确认', '取消']
               ,yes: function(index, layero){
                 //按钮【按钮一】的回调
